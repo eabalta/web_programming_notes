@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+    <title>JavaScript Notları</title>
+</head>
+
+<body class="w-75 p-3 my-5 mx-auto shadow rounded card">
+    <h1 class="text-center card-header mb-4">JavaScript Notları</h1>
+
+    <div class="card mb-4">
+
+        <h3 class="text-center card-header mb-2">Giris</h3>
+        <ul>
+            <li>JavaScript kodlarimizi internal olarak yazmak istersek body etiketi disina, html etiketi icerisine <span
+                    class="lead">script etiketi</span> arasina yerlestiririz.</li>
+            <li>Eger External olarak yazmak istersek, script.js adinda bir dosya olustururuz. Olusturdugumuz bu dosyayi
+                html
+                sayfasina dahil etmek icin de <span class="lead">script:src kisayolunu</span> kullaniriz. Src olarak da
+                olusturdugumuz js dosyasini gosteririz.</li>
+            <li>Js dosyasinda yazdigimiz kodlari Chrome tarayicisi uzerinde F12-Console araciligiyla kolaylikla test
+                edebiliriz. Bunun icin js dosyasinda kullanacagimiz kodlar;
+                <ul>
+                    <li><span class="lead">console.log()</span> >> Icine verilen bir degeri console ekranina yazdirir.
+                    </li>
+                    <li><span class="lead">console.error()</span> >> Icine verilen bir degeri console ekranina error
+                        seklinde yazdirir.</li>
+                    <li><span class="lead">console.warn()</span> >> Icine verilen bir degeri console ekranina uyari
+                        seklinde
+                        yazdirir.</li>
+                    <li><span class="lead">console.clear()</span> >> Console ekranini temizler.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Degiskenler</h3>
+        <ul>
+            <li>Degisken tanimlamak icin 3 adet anahtar kelime vardir.
+                <ul>
+                    <li><span class="lead">var</span></li>
+                    <li><span class="lead">let</span></li>
+                    <li><span class="lead">const</span></li>
+                </ul>
+            </li>
+            <li>var ile let arasinda sadece scope olarak fark vardir. Buna ileride deginecegiz.</li>
+            <li>const ise sabit olarak nitelendirecegimiz, sonradan degistirilmesini istemedigimiz degiskenler icin
+                kullanilir.</li>
+            <li>En basta hicbir deger atanmamis fakat tanimlanmis degiskenler <span class="lead">undefined</span> olarak
+                tanimlanirlar.
+                <br><span class="muted">var age;</span> (undefined)
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Degisken Tipleri</h3>
+        <ul>
+            <li>Degiskenler <span class="lead">Primitive</span> ve <span class="lead">Reference(Object)</span> olarak
+                iki
+                sekilde nitelendirilirler.</li>
+            <li>Degiskenin tipini ogrenmek icin <span class="lead">console.log(typeof degisken_ismi)</span> seklinde bir
+                kullanim ile degiskenin tipini console ekranina bastirabiliriz.</li>
+            <li>Primitive Types
+                <ul>
+                    <li><span class="lead">String > var name = "enes";</span></li>
+                    <li><span class="lead">Number > var age = 22; or var weight = 66.5;</span></li>
+                    <li><span class="lead">Boolean > var isActive = true;</span></li>
+                    <li><span class="lead">null > var surname = null;</span></li>
+                    <li><span class="lead">undefined > var height;</span></li>
+                </ul>
+            </li>
+            <li>Reference Types - Objects
+                <ul>
+                    <li><span class="lead">Array > let names=['Ali','Atilla','Alper']</span></li>
+                    <li><span class="lead">Object >
+                            <pre>let address = {
+        country : 'Turkey'
+        city    : 'Izmir',
+    }
+                    </pre></span>
+                    </li>
+                    <li><span class="lead">Function >
+                            <pre>var calculateAge = function(){
+        return 0;
+    };
+                    </pre></span></li>
+                </ul>
+            </li>
+            <li>Burda en onemli farklardan bir tanesi integer ve float gibi farkli sayisal degerlerin olmamasidir. Tek
+                bir
+                sayisal tur var o da number.</li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Degisken Donusumleri</h3>
+        <ul>
+            <li><span class="lead">Number()</span> seklinde bir fonksiyon kullanarak belirli degerleri numbera
+                cevirebiliriz.</li>
+            <li><span class="lead">String()</span> seklinde bir fonksiyon kullanarak belirli degerleri stringe
+                cevirebiliriz.</li>
+            <li><span class="lead">(10).toString();</span> seklinde tur icinde tanimlanmis fonksiyonlari kullanarak da
+                string donusumu yapialbilir.</li>
+            <li><span class="lead">val = parseInt("10");</span> seklinde kullanim ile Stringleri Numbera cevirebiliriz.
+            </li>
+            <li><span class="lead">val = parseFloat("10.5");</span> seklinde kullanim ile Stringleri Float seklinde
+                kullanilabilir bir numbera cevirebiliriz.</li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Operatorler</h3>
+        <ul>
+            <li>Burada 4 farklı operatör türü vardır.
+                <ul>
+                    <li>Aritmetik Operatorler</li>
+                    <li>Atama Operatorleri</li>
+                    <li>Karsilastirma Operatorleri</li>
+                    <li>Mantiksal Operatorler</li>
+                </ul>
+            </li>
+            <li><span class="lead">1 - Aritmetik Operatorler</span>
+                <ul>
+                    <li>+,-,*,/,%,++,--</li>
+                    <li>Kullanimlari diger dillerle aynidir.</li>
+                </ul>
+            </li>
+
+            <li><span class="lead">2 - Atama Operatorleri</span>
+                <ul>
+                    <li>=, +=, -=, *=, /=, %=</li>
+                    <li>Kullanimlari diger dillerle aynidir.</li>
+                </ul>
+            </li>
+
+            <li><span class="lead">3 - Karsilastirma Operatorleri</span>
+                <ul>
+                    <li>== (Sadece barindirdigi degeri kontrol eder),=== (Hem deger hem de type kontrol eder), !=, !==,
+                        >turevleri</li>
+                    <li>Kullanimlari diger dillerle aynidir.</li>
+                </ul>
+            </li>
+
+            <li><span class="lead">4 - Mantiksal Operatorler</span>
+                <ul>
+                    <li>&& And</li>
+                    <li>|| Or</li>
+                    <li>! Not</li>
+                    <li>Kullanimlari diger dillerle aynidir.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Veri Yapilari</h3>
+        <ul>
+            <li>Bu konu altinda Date, Number ve Stringlerin metodlari ogretildi. Farkli olarak Template Literals
+                verildi.
+            </li>
+            <li><span class="lead">Template Literals</span>
+                <ul>
+                    <li>Parcali bir sekilde string olustururken kolaylik saglar. String formatlamaya benzer.</li>
+                    <li>Normal:
+                        <pre>
+                        var city = 'Denizli';
+                        let val = city + 'is the most beautiful city in the Turkey.';
+                    </pre>
+                    </li>
+                    <li>Template Literals
+                        <pre>
+                            var city = 'Denizli';
+                            let val = `${city} is the most beautiful city in the Turkey.`;
+                        </pre>
+                    </li>
+                    <li>Burada onemli noktalardan bir tanesi ' isareti degil, ` isaretinin kullaniliyor olmasi.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Kosul Ifadeleri</h3>
+        <ul>
+            <li>If, else if ve else komutlari, C ve Java'daki syntax ile aynidir.</li>
+            <li>Switch-case yapisi da Java'daki yapi ile birebir ayni.</li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Object Literals</h3>
+        <ul>
+            <li>Object olusturma islemidir. Object gibi icerisinde bircok deger tanimlanip icerisine bilgi saklanabilir.
+            </li>
+            <li>
+                <pre>
+                let person = {
+                    firstName = "Enes Alper",
+                    lastName = "Balta",
+                    address = {
+                        city = "Izmir",
+                        country = "Turkey"
+                    }
+                }
+            </pre>
+            </li>
+            <li>Liste misali icerisine birden cok nesne yerlestirebilir.
+                <pre>
+                    let people = [
+                        {firstName="Enes Alper",lastName="Balta"},
+                        {firstName="Atilla",lastName="Balta"},
+                        {firstName="Ali",lastName="Balta"}
+                    ]
+                </pre>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Loops</h3>
+        <ul>
+            <li>for, while, do-while donguleri Java ile birebir aynidir.</li>
+            <li>for dongusunde i tanimlamak icin let kullanmak gerekir.
+                <pre>
+                    for(let i=0; i>10; i++){
+                        console.log(i);
+                    }
+                </pre>
+            </li>
+            <li>
+                <h5>Dongulerin Object ve Array ile Kullanimi</h5>
+                <ul>
+                    <li>Normal for Kullanimi
+                        <pre>
+                            for(let i=0; i>10;i++){
+                                console.log(people[i]);
+                            }
+                        </pre>
+                    </li>
+
+                    <li>for in Kullanimi
+                        <pre>
+                            for(let i in people){
+                                console.log(i);
+                            }
+                        </pre>
+                    </li>
+
+                    <li>foreach Kullanimi <br>
+                        Burada function parametresi icerisindeki degiskene people dizisi icerisindeki her bir eleman
+                        teker
+                        teker kopyalanir. Kopyalanan her bir eleman function icerisinde yazilan isleme tabii tutulur.
+                        <pre>
+                            people.forEach(function(item){
+                                console.log(item);
+                            });
+                        </pre>
+                    </li>
+                </ul>
+            </li>
+            <li>Eger object icerisindeki bilgileri geri array olarak almak istersek map fonksiyonunu kullanmamiz
+                gerekir.
+                <pre>
+                    let val = people.map(function(item){
+                        return item.firstName + item.lastName;
+                    });
+                </pre>
+                Burada people icerisindeki her elemanin 'firstName' ve 'lastName' ozellikleri alindiktan sonra
+                birlestirerek
+                bir eleman olarak val icerisinde depolanir. people icerisindeki eleman sayisi kadar val icerisinde
+                eleman
+                birikir ve array olarak bize doner.
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Functions</h3>
+        <ul>
+            <li>Iki farkli tanimlama sekli vardir. <br>
+                1. Function Declaration
+                <pre>
+                    function function_name(parameters){
+                        processes...
+                    }
+                </pre>
+                2. Function Expressions
+                <pre>
+                    const function_name = function(parameters){
+                        processes...
+                    }
+                </pre>
+            </li>
+            <li>Eksik arguman yollama durumunda undefined tanimlanmamasi icin parametrelerin tanimlandigi yerde default
+                degerler tanimlayabiliriz.</li>
+            <li>Eger alinacak parametre sayisi belli degil ise parametre olarak hicbir sey tanimlanmaz. Function
+                icerisinde
+                arguments ozelligi ile alinan tum parametreler liste halinde bulunur ve bununla rahatlikla islem
+                yapilabilir.
+                <pre>
+                    let sum = 0;
+                    const sumAll = function(){
+                        for(let i=0; arguments.length>i ; i++){
+                            sum += arguments[i];
+                        }
+                    }
+                    sumAll(10,20,30,50...);
+                </pre>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Window Object</h3>
+        <ul>
+            <li>Normalde NodeJs icerisinde bulunmayan fakat Browser icerisinde var olan bir objedir.</li>
+            <li>Js icerisinde 'var' ile olusturdugumuz degiskenler, functions ve objects barindirir. Scope kavramindan
+                dolayi let ve const window icerisinde olusturulmaz.</li>
+            <li>Window'un bircok yerde kullanimi vardir.
+                <ul>
+                    <li>alert > uyari kutucugu cikartir.</li>
+                    <li>confirm > evet-hayir kutucugu cikartir. return olarak boolean deger dondurur.</li>
+                    <li>prompt > kullanicidan input almak icin kutucuk cikartir.</li>
+                    <li>.location ozelligi ile adres cubugundaki adresin detayli bilgilerini alabiliriz.</li>
+                    <li>.navigator ozelligi ile tarayicinin detayli ozelliklerine ulasabiliyoruz.</li>
+                    <li>.document ile html sayfasinin detayli ozelliklerine ulasabiliyoruz.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Scopes</h3>
+        <ul>
+            <li>Her dilde oldugu gibi Js'de de global ve local scope bulunmaktadir.</li>
+            <li>
+                <h4>Global Scope</h4>
+                <ul>
+                    <li>herhangi bir fonksiyon,dongu ya da if statement blogu icerisinde yer almayan yani disarda
+                        tanimlanan
+                        degiskenler global degiskenlerdir.</li>
+                    <li>var ile tanimlanmis degisken window icerisinde de tanimlanir.</li>
+                    <li>let ve const ile tanimlanan degiskenler window icerisinde tanimlanmazlar.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Local Scope</h4>
+                <ul>
+                    <li>Js icerisinde local scope islemleri birazcik karisik.</li>
+                    <li>Fonksiyon blogu icerisinde tanimlanmis her degisken sadece ve sadece o fonksiyon blogu
+                        icerisinde
+                        gecerlidir.</li>
+                    <li>Normal bir yazilim dilinde block icerisinde tanimlanan block icerisinde kalir mantigi olur.
+                        Fakat
+                        js'de var ile degisken tanimlamak bu durumu biraz degistirir. <br>
+                        <b>Eger fonksiyon blogu disindaki herhangi bir block(dongu,if,switch) icerisinde var ile bir
+                            degisken tanimlanirsa, tanimlanan o deger block disarisinda da gecerli olur.</b>
+                    </li>
+                    <li>var ile alakali olan bu durum let ve const icin gecerli degildir. Bu yuzden yazilimcilar genelde
+                        let
+                        ve const kullanirlar.</li>
+                    <li>let ve const, blocklar icerisinde tanimli iseler sadece blocklar arasinda gecerli olurlar. Eger
+                        global tanimli iseler windows objesi icinde tanimlanmazlar fakat global olarak islem gorurler.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Document Object Model (DOM)</h3>
+        <ul>
+            <li class="text-center"><img src="img/dom.PNG"> <br>
+                DOM yapisi aslinda parent-child iliskisine benzer yapidaki dallanan bir yapidir. Sayfa etiketlerine
+                erismek
+                istedigimizde Window objesi altindaki document aracigiyla biz istedigimiz etikete istedigimiz islemleri
+                yapabiliyoruz.</li>
+            <li>document altından birçok özelliğe erişim sağlanabilir.
+                <ul>
+                    <li>document.all -> Sayfada bulunan tüm elementleri getirir</li>
+                    <li>document.head -> Sayfanın head kısmını getirir</li>
+                    <li>document.body -> Sayfanın body kısmını getirir</li>
+                    <li>document.anchors -> Sayfadaki tüm linkleri getirir</li>
+                    <li>document.URL -> Sayfanın URL'sini getirir</li>
+                    <li>document.domain -> Sayfanın domain adresini getirir</li>
+                    <li class="lead">Kısacası sayfada bulunan tüm elementler document altındadır ve onun üzerinden
+                        ulaşılabilir.</li>
+                </ul>
+            <li>document altından seçilmiş elementin attribute değerlerine de ulaşılabilir.
+                <ul>
+                    <li>document.anchors[0].getAttribute('href');</li>
+
+                </ul>
+            </li>
+            </li>
+            <li><b>Single Element</b><br>
+                Eger sayfa uzerinden tek bir element secmek istersek kullanacagimiz iki farkli metod var.
+                <pre>
+                    document.getElementById()
+                    document.querySelector()
+                </pre>
+                Bu metotlarin kullanimiyla yalnizca bir adet element secebilir ve uzerinde istedigimiz degisiklikleri
+                gerceklestirebiliriz.
+                <ul>
+                    <li>getElementById fonksiyonu içerisine erişmek istediğimiz elementin Id değerini String olarak
+                        (tırnak
+                        içerisinde) veriririz.
+                        <pre>           document.getElementById('header')</pre>
+                    </li>
+                    <li>Ulaştığımız elementlerin alt özelliklerini istediğimiz gibi değiştirebiliriz.
+                        <pre>
+                            let val = document.getElementById('header');
+                            val.style.fontSize = '45px';
+                            val.style.color = 'red';
+                            val.className = 'btn-active';   //Classları tamamen değiştirir, yeni bir tane eklemez.
+                            val.classList.add('btn-muted'); //Classlara yeni bir tane class ekler
+                        </pre>
+                    </li>
+                    <li>Eğer elementin içeriğini değiştirmek istersek üç farklı yöntem kullanabiliriz.
+                        innerText,innerHTML,TextNode
+                        <ul>
+                            <li>val.innerText = 'Selam'</li>
+                            <li>val elementinin içerisine Selam yazar. Fakat HTML komutlarını algılamaz</li>
+                            <li>val.innerHTML = ' < b>Selam< /b> '</li>
+                            <li>val elementinin içerisine Bold olarak Selam yazar. HTML komutlarını algılar.</li>
+                            <li>TextNode ise innerText ile aynı işlevi görür. İlerleyen konularda belirtiliyor.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li>querySelector, getElementById' e göre daha esnek bir yapıya sahiptir.</li> <li>Gerekli
+                                        özelliklere
+                                        göre seçmeler yapıalbilir.
+                                        <ul>
+                                            <li>document.querySelector('#header') -> id'si header olan elementi seçer
+                                            </li>
+                                            <li>document.querySelector('.btn') -> Classı btn olan elementi seçer</li>
+                                            <li>document.querySelector('li') -> Yakaladığı <span class="lead">ilk</span>
+                                                li
+                                                elemanını seçer</li>
+                                            <li>document.querySelector('li:last-child') -> gibi özelliklerin
+                                                kullanılmasına
+                                                da olanak sağlar</li>
+                                        </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>Multiple Elements</b><br>
+                        Eger birden fazla elemani secmek ve onlar uzerinde islem yapmak istiyorsak birden fazla
+                        kullanabilecegimiz
+                        metod bulunmakta.
+                        <pre>
+                    document.getElementsByClassName() > Class isimleriyle ulasmamizi saglar
+                    document.getElementsByTagName()   > Etiketlerin isimleriyle ulasmamizi saglar (div,li...)
+    
+                    Bu metotlar return olarak HTMLCollection dondurur ve elemanlar arasinda yalnizca for dongusu ile gezilebilir.
+    
+                    document.querySelectorAll()       > Birkac ozel kullanimi ile yine ayni islevi gorur.
+    
+                    Bu metod ise return olarak NodeList dondurur. Bu sayede elemanlar arasinda forEach dongusu ile kolayca gezilebilir.
+                </pre>
+                    </li>
+                    <li><b>Elementler Üzerinde Gezinme</b>
+                        <ul>
+                            <li>.childNodes metodu, textNode'lar dahil tüm alt elementleri NodeList şeklinde döndürür.
+                            </li>
+                            <li><span class="lead">Code içerisindeki her bir satır aralığı denebilir.</span></li>
+                            <li>.children dediğimizde textNodelar işin içerisine katılmaz. Sadece elementler geri
+                                döndürülür.</li>
+                            <li>childNodes[0].nodeType ile nodeun hangi tipte olduğunu öğrenebiliriz. <a
+                                    href="https://www.w3schools.com/Jsref/prop_node_nodetype.asp">Details</a></li>
+                            <li>firstChild ile seçilen element altındaki ilk node alınır. TextNode olabilir.</li>
+                            <li>firstElementChild ile sadece ilk element alınır.</li>
+                            <li>childElementCount içeride kaç tane element olduğunu söyler.</li>
+                            <li>parentNode, parentElement gibi özellikler de mevcut.</li>
+                            <li>children[0].nextSibling ile seçilen elementten sonra hanig node varsa onu getirir.
+                                nexElementSibling ise sadece bir sonraki elementi getirir.</li>
+                        </ul>
+                    </li>
+                    <li><b>Elemen Silme & Güncelleme</b>
+                        <ul>
+                            <li>Elementin kendisini yada childNode, children özelliğinin indexlenmesini kullanarak bir
+                                alt
+                                elemanını .remove() metoduyla silebiliriz. </li>
+                            <li>removeChild metodu içerisine elementin childrenlarından bir tanesini vererek yine
+                                silinmesini sağlayabiliriz.
+                                <pre>
+                                    let val = document.querySelector('#task-list');
+                                    val.removeChild(val.children[0]);
+                                </pre>
+                            </li>
+                            <li>removeAttribute metoduyla istediğimiz nesnenin istediğimiz attr. değerini silebiliriz.
+                                <pre>val.children[0].removeAttribute('class')</pre>
+                            </li>
+                            <li>val.classList.add('new') ile yeni bir class ekleyebilir. Aynı şekilde remove metodu ile
+                                çıkartabiliriz.</li>
+                        </ul>
+                    </li>
+                    <li><b>Eleman Oluşturma</b>
+                        <ul>
+                            <li><b>const li = document.createElement('li')</b> ile li değişkeninin içerisine li elementi
+                                atanır.</li>
+                            <li><b>li.className = 'list-group-item'</b> li değişkeninin içerisindeki li elementine class
+                                eklenir.</li>
+                            <li><b>li.setAttribute('title','new item')</b> metodu ile li elementinine title özelliği
+                                eklenir.</li>
+                            <li><b>const text = document.createTextNode('inner text'); <br>
+                                    li.appendChild(text)
+                                </b> metodları sayesinde li değişkeninin içerisindeki li elemanının içerisine 'inner
+                                text'
+                                stringini eklemiş oluyoruz.</li>
+                            <li>Eğer li elemanını ul listesinin içerisine eklemek istersek
+                                <b>document.querySelector('#task-list').appendChild(li);</b> metoduyla ekleyebiliriz.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Events</h3>
+        <ul>
+            <li>Bir Event oluşturabilmemiz için önce eventi gerçekleştirecek elementi getElementById, querySelector
+                yardımıyla seçmemiz gerekiyor. <br>
+                let btn = document.querySelector('#btnDeleteAll');
+            </li>
+            <li>Elementi seçtikten sonra <b>btn.addEventListener</b> metodu ile event eklenir.</li>
+            <li>addEventListener metodu iki parametre alır; ilki <b>string olarak eventin türü
+                    (click,mouseover..)</b>, ikincisi <b>gerçekleştirilecek eylem, fonksiyon</b>. Bu fonksiyonu
+                dışarıdan da yollayabiliriz.
+                <pre>
+                            btn.addEventListener('event_turu',function() {
+                                Yapılacak işlemler..
+                            });
+                    </pre>
+            </li>
+            <li>Aynı element için, aynı event türünü iki farklı fonksiyon olarak tanımlayabiliriz. btn nesnesine
+                tıklandığında ikisi de çalışır. <br>
+                <pre>
+                            btn.addEventListener('click',btnClick);
+                            btn.addEventListener('click',btnClick2);
+                        </pre>
+            </li>
+            <li>function içerisine parametre olarak göndereceğimiz event nesnesi (e) ile birçok işlem yapılabilir.
+                Öncelikle e.preventDefault() ile istenmeyen refresh durumunu çözebiliriz.
+                <pre>
+                            btn.addEventListener('event_turu',function(e) {
+                                Yapılacak işlemler..
+                                e.preventDefault();
+                            });
+                    </pre>
+                Ayrıca <b>e.target</b> ile tıklanan nesneyi alabiliriz ve alınan nesnenin özelliklerine de
+                e.target.id gibi erişebiliriz.
+            </li>
+            <li><b>Mouse Events</b>
+                <ul>
+                    <li><b>.addEventListener('click',...)</b> <br>
+                        click : Tek tıklama hareketiyle tetiklenir.
+                    </li>
+                    <li><b>.addEventListener('dblclick',...)</b> <br>
+                        dblclick : Çift tıklama hareketiyle tetiklenir.
+                    </li>
+                    <li><b>.addEventListener('mousedown',...)</b> <br>
+                        mousedown : Mouse tıklama işlemi ilk aşağı sonra yukarı olarak gerçekleşir. Sol tıka
+                        basıldığı anda down olur.
+                    </li>
+                    <li><b>.addEventListener('mouseup',...)</b> <br>
+                        mouseup : Mouse tıklama işlemi ilk aşağı sonra yukarı olarak gerçekleşir. Mousedown olduktan
+                        sonra sol tıktan parmağımızı kaldırdığımız anda ise mouseup olur.
+                    </li>
+                    <li><b>.addEventListener('mouseenter',...)</b> <br>
+                        mouseenter : Mouse event tanımlanan nesnenin içerisine girdiği anda mouseenter olayı
+                        gerçekleşir.
+                    </li>
+                    <li><b>.addEventListener('mouseleave',...)</b> <br>
+                        mouseleave : Mouse event tanımlanan nesnenin içerisinden çıktığı anda mouseleave olayı
+                        gerçekleşir.
+                    </li>
+                    <li><b>.addEventListener('mouseover',...)</b> <br>
+                        mouseover : Mouse event tanımlanan nesnenin içerisine girdiği anda mouseover olayı
+                        gerçekleşir. Fakat nesne içerisindeki diğer elemanların üzerine gelinirse mouseout olup
+                        hemen tekrar mouseover olur.
+                    </li>
+                    <li><b>.addEventListener('mouseout',...)</b> <br>
+                        mouseout : Mouse event tanımlanan nesnenin içerisinden çıktığı anda mouseout olayı
+                        gerçekleşir. Fakat nesne içerisindeki diğer elemanların üzerine gelinirse de direkt mouseout
+                        olur.
+                    </li>
+                    <li><b>.addEventListener('mousemove',...)</b> <br>
+                        mousemove : Event atanan nesnenin içerisinde mouseun hareket ettiği her an bu eylem çalışır.
+                    </li>
+                </ul>
+            </li>
+            <li><b>Keyboard Events</b>
+                <ul>
+                    <li>keydown : tuşa basıldığında tetiklenir</li>
+                    <li>keyup : tuştan elimizi kaldırdığımız an gerçekleşir.</li>
+                    <li>keypress : tuşa basılıp çekilme olayında gerçekleşir</li>
+                    <li>focus : input alanına mouse ile tıkladığımızda aktif olur.</li>
+                    <li>blur : focus olayının tam tersi, input alanından çıktığımızda gerçekleşir.</li>
+                    <li>cut : input içerisinde kesme işlemi yaptığımızda çalışır.</li>
+                    <li>paste : input içerisinde yapıştırma işlemi yaptığımızda çalışır.</li>
+                    <li>submit : form içerisinde bir buton aracılığıyla submit yapmaya çalıştığımızda gerçekleşir.
+                    </li>
+                    <li>select : input alanında metnin herhangi bir alanını mouse ile basılı tutup seçtiğimizde
+                        gerçekleşir.</li>
+                </ul>
+            </li>
+            <li><b>Event Bubbling & Capturing</b>
+                <ul>
+                    <li>Eğer bir elementten başlayıp üstteki parentları da dahil hepsine click metodu verdiğimizi
+                        düşünürsek, en içteki elemana tıkladığımızda; en içten en dışa doğru bütün click metotları
+                        çalışır. Buna Event Bubbling denir. </li>
+                    <li>Bu olayın tam tersi Event Capturing'tir. Bunu gerçekleştirmek için de addEventListener
+                        metodunun 3. parametresini <b>true</b> olarak veririz. Normalde 3.parametre default olarak
+                        false'tur. Çünkü default olarak Event Bubbling desteklenir. Biz bunu true yaptığımızda Event
+                        Capturing desteklemeye başlarız. <b>.addEventListener('click',function()...,true);</b></li>
+                    <li>Bu durumları ortadan kaldırmak istersek addEventListener içerisindeki function içerisine
+                        event nesnesi (e) yollayıp, bu nesne üzerinden <b>e.stopPropagation()</b> metodu çağrılır.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">Storage</h3>
+        <ul>
+            <li>İki farklı depolama seçeneği vardır. Local Storage ve Session Storage</li>
+            <li><b>Local Storage</b> <br>
+                Değerler url'ye bağlı olarak kaydedilir. Tarayıcı kapanıp açılsa bile bilgiler kaybolmaz, depolanır.
+            </li>
+            <li><b>Session Storage</b> <br>
+                Değerler geçici olarak depolanır. Tarayıcı açılıp kapandığında bilgiler kaybolur.
+            </li>
+            <li>İki storage için de kullanılan metotlar aynıdır;
+                <pre>
+                            const firstName = localStorage.setItem('firstName','Enes');
+                            setItem metoduyla veri depolanır. Key/Value ilişkisi vardır. İlk parametre key, ikinicisi value'dur.
+                        </pre>
+                <pre>
+                            let val = localStorage.getItem('firstName');
+                            getItem metoduyla depolanan değer alınabilir.
+                        </pre>
+                <pre>
+                            localStorage.removeItem('firstName');
+                            removeItem ile depolanan değer silinir.
+                            .clear metodu ile de storage tamamen temizlenir.
+                        </pre>
+            </li>
+            <li>Storage içerisinde array depolamaya çalışırsak arrayin elemanları virgüllerle tek bir string haline
+                getirilerek depolanır. Bu da istemediğimiz bir durumdur. Bu işlemi şu adımlarla çözeriz;
+                <pre>
+                            hobies = ['enes','alper','balta'];
+                            localStorage.setItem('hobies',<b>JSON.stringify(hobies)</b>);
+                                Şeklinde kullanarak problemi çözebiliriz.
+    
+                            Geri almak istersek;
+    
+                            val = <b>JSON.parse(localStorage.getItem('hobies'));</b>
+                        </pre>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card mb-4">
+        <h3 class="text-center card-header mb-2">jQuery</h3>
+        <ul>
+            <li>jQuery, JS kullanımı kolaylaştırmak için yazılmış bir frameworktür.</li>
+            <li>jQuery'i iki farklı yolla projemize dahil edebiliyoruz. İlki başka bir web server'ından CDN yardımıyla
+                projeye dahil etmek, ikincisi ise External olarak dosyayı indirip proje dosyasından kaynak göstermek.
+            </li>
+            <li><b>Selectors</b>
+                <ul>
+                    <li><b>$('selectors')</b> şeklinde kullanım yapılır.</li>
+                    <li>ID ile kullanılabilir. $('#container')</li>
+                    <li>Class ile kullanılabilir. $('.card')</li>
+                    <li>Element ile kullanılabilir. $('ul')</li>
+                    <li>CSS içerisindeki selector işlemleri burada da geçerlidir. Mesela $('ul li a') işlemi ul nesnesi
+                        altındaki li nesnesi altındaki a elementini seçer.</li>
+                </ul>
+            </li>
+            <li><b>Styling Content</b>
+                <ul>
+                    <li>jQuery aracılığıyla elementlerin CSS kodlarını da düzenleyebiliriz.</li>
+                    <li>Üç farklı kullanımı vardır.</li>
+                    <li>$('#container').css('özellik','değer').css('özellik','değer')... şeklinde kullanılabilir.</li>
+                    <li>Toplu şekilde CSS özelliği de verilebilir.
+                        <pre>
+                            var styles={
+                                border : "1px solid green",
+                                background : "black",
+                                color : "white",
+                            }
+                            $('#container').css(styles);
+                    </pre>
+                    </li>
+                    <li>
+                        <pre>
+                            $('#container').css({
+                                border : "1px solid green",
+                                background : "black",
+                                color : "white",
+                            });
+                        </pre>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+</body>
+
+<script src="script.js" type="text/Javascript"></script>
+
+</html>
