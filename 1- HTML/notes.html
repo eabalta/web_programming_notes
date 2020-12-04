@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+</head>
+<body>
+    <h1 id="notesheader">HTML5 Notes</h1>
+    <hr>
+
+    <h3>Headers Tag</h3>
+    <ul>
+        <li>h1,h2 benzeri basliklarin onemi arama motorlarinda sonuclarin dogru gosterilmesiyle alakalidir.</li>
+        <li>Font size veya bold tarzi durumlar css ile ayarlanir.</li>
+        <li>Eger metninizi h1 icerisinde tanimlamissaniz arama motorlari bunu sitenin en onemli icerigi olarak anlayip aramalarda onu gostermeye calisir.</li>
+    </ul>
+    <hr>
+
+    <h3>Paragraph Tag</h3>
+    <ul>
+        <li>Yazilara toplu mudahale edebilmek icin kullanilir.</li>
+        <li>Yazilarin duzenlenmesi daha kolay bi hale gelir.</li>
+    </ul>
+    <hr>
+
+    <h3>Bicimlendirme Etiketleri</h3>
+    <ul>
+        <li>hr      : Yazildigi yere horizontal bir cizgi ceker.
+            <ul><li> <hr> </li></ul>
+        </li>
+
+        <li>b       : Yaziyi bold yapmaya yarar.
+            <ul><li><b>Bold</b></li></ul>
+        </li>
+
+        <li>strong  : b etiketi ile ayni isleve sahiptir fakat algoritmalarda strong'un daha onemli olarak alinir.
+            <ul><li><strong>strong etiketi</strong></li></ul>
+        </li>
+
+        <li>i       : Yaziyi italik olarak yazmayi saglar.
+            <ul><li><i>italic</i></li></ul>
+        </li>
+
+        <li>em      : i ile ayni isleve sahiptir fakat algoritmalarda i den daha onemli olarak alinir.
+            <ul><li><em>em etiketi</em></li></ul>
+        </li>
+
+        <li>u       : Yazinin altini cizmeye yarar.
+            <ul><li><u>u etiketi</u></li></ul>
+        </li>
+        
+        <li>ins     : u etiketi ile ayni isleve sahiptir.
+            <ul><li><ins>ins etiketi</ins></li></ul>
+        </li>
+
+        <li>sup     : Aradaki degeri yukariya kaydirir.
+            <ul><li>X <sup>2</sup></li></ul>
+        </li>
+
+        <li>sub     : Aradaki degeri asagiya kaydirir.
+            <ul><li>X <sub>2</sub></li></ul>
+        </li>
+
+        <li>del     : Aradaki yazinin uzerini cizer.
+            <ul><li><del>del etiketi</del></li></ul>
+        </li>
+
+        <li>small   : Aradaki degeri daha kucuk yazar.
+            <ul><li><small>small etiketi</small></li></ul>
+        </li>
+
+        <li>mark    : Aradaki degeri sari renk ile isaretler.
+            <ul><li><mark>mark etiketi</mark></li></ul>
+        </li>
+    </ul>
+    <hr>
+
+    <h3>Listeler</h3>
+    <h4>Unordered List</h4>
+    <ul><li>ul etiketi ile kullanilir.</li>
+        <li>Her bir eleman ul etiketi icerisine li etiketi eklenerek arasina yazilir.</li>
+    </ul>
+    <hr>
+
+    <h4>Ordered List</h4>
+    <ol><li>ol etiketi ile kullanilir.</li>
+        <li>Her bir eleman ol etiketi icerisine li etiketi eklenerek arasina yazilir.</li>
+        <li>Eger farkli degerler verilmek istenirse start ile baslangic indexi, type ile sayi harf ya da roma rakami gibi tipler verilebilir.</li>
+    </ol>
+    <hr>
+
+    <h3>Images</h3>
+    <ul>
+        <li>Genelde images.html(fotograflarin kullanildigi html sayfalari) ile img klasore ayni dizinde bulundurulur.</li>
+        <li>img etiketi kullanilir. Kapanis etiketi yoktur sadece attribute kullanarak islemler yapilir.</li>
+        <li>Resim yolunu gostermek icin src att. kullanilir.<ul><li><img src="img/1.jpg" width="250"></li></ul></li>
+        <li>Resimlerin genisligi ayarlanarak tum boyutunu ayarlayabilirz. Sadece genislik ya da sadece yukseklik ayarlandiginda orana gore otomatik kucultulur. Yani herhangi bir basiklik yasanmaz. Genislik ayarlamak icin de width att. kullanilir. <ul><li><img src="img/1.jpg" width="100"></li></ul></li>
+        <li>Sik kullanilan attr.lardan bir tanesi de alt'tir. Eger verilen dosya yolunda herhangi bir img yoksa bozukimg.ico nunun yaninda hangi kelime yazacagini belirler. <ul><li><img src="bozukyol" alt="Alt icerisine yazilmis cumle"></li></ul></li>
+        <li>HTML 5 icerisindeki dosya yollari PL projesindekine benzer, eger gidecegimiz klasor bir ust dizin ise .. kullanarak bir ust dizine gidilir. Ex: ..\img\1.png</li>
+        <li>Chrome uzerinde Incele(F12) tusuyla Developer Tool uzerinden images dosya yollarini bulabiliriz.</li>
+        <li>Fotograflarin yollari URL seklinde de verilebiliyor. Boylece direkt internet uzerinden bir fotografa da erisebiliyoruz. <ul><li><img src="https://i.ya-webdesign.com/images/mr-robot-png-5.png" alt="Mr.Robot" width="150"></li></ul></li>
+    </ul>
+    <hr>
+
+    <h3>Forms</h3>
+    <ul>
+        <form action="">
+        <li>Formlar kullanicidan bilgileri alip servera tasiyan bir nesnedir. Form elemani bilgileri tasiyacak olan kapsayici bir elemandir. Bunun icerisinde cesitli</li>
+        <li>Etiket olarak form etiketini kullanir, acilis ve kapanis etiketlerine sahiptir.</li>
+        <li>Formlarin icerisine bircok element eklenebilir. Detaylari <a href="https://www.w3schools.com/html/html_forms.asp">W3 School</a>'dan ogrenebilirsin.</li>
+        <li>input etiketi kullanicidan girdi almamizi saglar. Sadece acilis etiketine sahiptir. Varsayilan olarak bir textbox olusturur. Fakat tipini icerisine verecegimiz type attribute'u ile belirleyebiliyoruz. <ul><li><p>textbox : <input type="text"></p></li></ul></li>
+        <li>input etiketinde onemli attributelardan bir tanesi de <b>name</b> attr. Backend kisminda gorulecek olan <b>submit</b> tusuna basildiktan sonra form baslangic etiketindeki  <b>action</b> attr. icerisindeki server yoluna verileri gonderir. Bu veriler input etiketi icerisindeki name attributelara gore ayristirilir. Bir nevi degisken ismi gibi dusunulebilir.</li>
+        <li>Checkbox kulanimi <ul><li><p>Checkbox : <input type="checkbox"></p></li></ul></li>
+        <li>Radio Buttonlar eklenebilir. Tek bir secim yapmak icin name attribute'u verilebilir. 
+            <ul><li><p>Radio Buttons <br>
+                  Erkek :<input type="radio" name="cinsiyet"> <br>
+                   Erkek Oglu Erkek :<input type="radio" name="cinsiyet"> </p></li></ul></li>
+        <li>select ve option etiketleriyle sehir secmek gibi islemler yapilabilir. Ayni select kutusunda birden cok secimli kullanmak icin selectin baslangic etiketine multiple keywordu eklenir. <ul><li><p>
+            <select name="isim">
+                <option>Enes</option>
+                <option>Alper</option>
+                <option>Balta</option>
+            </select></p></li></ul></li>
+        <li>Eger doldurulmasi zorunlu bir alan var ise bunu required keywordu ile gerceklestirebiliriz. Submit tusuna basildiginda gerekli hatayi verecektir. <ul><li><input type="text" required></li></ul></li>
+        <li>Bu alanda bircok islem yapilabilir, mesela email,telefon gibi ozel girisler de alinabilir. <ul><li><p>Email : <input type="email"></p></li></ul></li>
+        <li>Eger kullaniciya ipucu vermek istiyorsak (textbox icerisine gecici bir yazi) placeholder attr. kullaniriz. <ul><li><input type="text" placeholder="Ornek bir ipucu"></li></ul></li>
+        <li>Submit tusu, form etiketi icerisindeki inputlari name ozelligine gore action icerisindeki yola gonderir. <ul><li><input type="submit" value="Gonder"></li></ul></li>
+        <li>Reset butonu ise verilmisse degerleri ilk value degerine dondurur. Eger verilmemisse tum inputlari sifirlar. <ul><li><input type="reset"></li></ul></li>
+        </form>
+    </ul>
+    <hr>
+
+    <h3>Tables</h3>
+    <ul>
+        <li>Tablolar <b>table</b> etiketi ile olusturulur. Acilis ve kapanis etiketlerine sahiptir.</li>
+        <li>Temel olarak en basta satir olusturma daha sonrasinda icerisine sutunlar ekleme mantigi ile ilerler.</li>
+        <li><b>tr</b> etiketi ie satirlar olusturulur. <b>td</b> etiketi ile sutunlar olusturulur.</li>
+        <li>Tabloya baslik eklemek icin <b>thead</b> etiketi arasina <b>tr</b> ve <b>th</b> ler eklenir.</li>
+        <li>Geri kalan bilgiler <b>tbody</b> arasina <b>tr</b> ve <b>td</b> ler eklenerek yapilir.</li>
+        <li>Border eklemek icin table etiketine border="1" attr. verilir.</li>
+        <li>Genisligini yuzdeli bir sekilde ayarlamak icin de table etiketi icinde width kullanilir.</li>
+        <li>Satirlari ortak kullanmak icin <b>colspan</b> attr. sutunleri ortak kullanmak icin <b>rowspan</b> kullanilir.</li>
+        <li>Ex:
+            <ul><li>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Isim</th>
+                            <th>Soyisim</th>
+                            <th>Yas</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Enes Alper</td>
+                            <td>Balta</td>
+                            <td>23</td>
+                        </tr>
+                        <tr>
+                            <td>Mesut</td>
+                            <td>Balta</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Egemen</td>
+                            <td colspan="2">Kaan</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </li></ul>
+
+        </li>
+    </ul>
+    <hr>
+
+    <h3>Links</h3>
+    <ul>
+        <li>Linkler a etiketi ile kullanilir. Acilis ve kapanis etiketleri vardir.</li>
+        <li>Acilis linki icerisine href attr. mutlaka kullanilir. Bu attr. icerisine linke tiklandiktan sonra gidilecek adres degeri verilir.</li>
+        <li>Acilis ve kapanis etiketleri arasina ise link olarak gozukecek metin, kelime ya da image girilebilir.</li>
+        <li>Eger Basa Don tarzi ya da belirli bir elemana gitme gibi eylemler yapilmak istenirse gidilecek elemanin acilis etiketinde unique bir id attr. tanimlanir. Daha sonrasinda href icerisine bu elemanin idsi <b>#iddegeri</b> seklinde verilerek o elemana ulasmasi saglanir. <ul><li> <a href="#notesheader">Notes Basligina Dondurur</a></li></ul></li>
+        <li>Acilacak linkin yeni sekmede acilmasini istiyorsak a etiketi icerisine target attr. kullanilir. Bu attr icerisine "_blank" degeri verilerek bu islem gerceklestirilir. <ul><li><a href="http://www.github.com/eabalta" target="_blank">Github</a></li></ul></li>
+    </ul>
+    <hr>
+
+    <h3>Div & Span</h3>
+    <ul>
+        <li>Div ve Span, ogeleri gruplamak icin kullanilan etiketlerdir. Bir nevi container islevi gorur.</li>
+        <li>Menu,Content,Footer gibi ogeleri div ile gruplayarak toplu bir sekile islemler yapabiliriz.</li>
+        <li>Div icindeki elemani block halinde tutar yani bir alt satirda tek basina tutar.</li>
+        <li>Span ise inline olarak verilen degeri tutar, yani bir alt satira inmez bulundugu yerde container olusturur.</li>
+        <li><div style="color: aqua;">Ornek div kullanimi</div> Lorem ipsum dolor sit amet. <span style="color: blueviolet;">Span Lorem, ipsum.</span></li>
+    </ul>
+    <hr>
+
+    <h3>Semantic Elements</h3>
+    <ul>
+        <li>Semantic Elements div ve span ile ayni islevi gorur. Her bir semantic elementi bir container islevi gorur.</li>
+        <li>Fakat arama motorlarinda daha uste cikabilmek icin ve her seyin daha anlamli olabilmesi icin(her etikete bir id vermek gibi) semantic elementler kullanilir.</li>
+        <li>Daha detayli kullanimlar CSS bolumunde ele alinacaktir.</li>
+        <li>Ayrintili bilgiler icin : <a href="https://developer.mozilla.org/en-US/docs/Glossary/Semantics" target="_blank">MDN Web Docs</a></li>
+        <li>Ex: <ul><li><img src="img/semantic.png" width="550"></li></ul></li>
+    </ul>
+    <hr>
+
+    <h3>IFrame</h3>
+    <ul>
+        <li>IFrame bulunan html dosyasi icerisine farkli adresteki html sayfasi, video vb. elementlerin o html sayfasinda gosterilmesini saglar.</li>
+        <li>Ex: <ul>
+            <li><iframe src="html5-reference.pdf" frameborder="0" width="560" height="315"></iframe></li>
+            <li><iframe width="560" height="315" src="https://www.youtube.com/embed/L03F5ybeLuI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
+        </ul></li>
+    </ul>
+    <hr>
+</body>
+</html>
