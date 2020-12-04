@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body {
+            padding: 70px;
+        }
+
+        .container {
+            margin: 30px auto;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bootstrap</h1>
+        <hr>
+        <h2>Genel Bilgiler</h2>
+        <ul>
+            <li>Bootstrap kutuphanesi hazir classlardan olusan bir kutuphanedir.</li>
+            <li>Standart atanmis classlar vardir. h1 turevi gibi classlar bootstrap dahil edildiginde direkt uygulanan
+                classlardir.</li>
+            <li>Ayrica her etikete farkli farkli classlar atayip farkli goruntuler edinmesini saglayabiliriz.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Heading & Text</h2>
+        <ul>
+            <li>
+                <h1>h1.Bootstrap</h1>
+                <h2>h2.Bootstrap</h1>
+                    <h3>h3.Bootstrap</h1>
+                        <h4>h4.Bootstrap</h1>
+                            <h5>h5.Bootstrap</h1>
+                                <h6>h6.Bootstrap</h1>
+            </li>
+            <li>Bir etikete text-muted classi ekleyerek sonuklesmesini saglayabiliriz. <p class="text-muted">text-muted
+                </p>
+            </li>
+            <li>
+                Buyuk font ile bir yazi yazmak istedigimizde display-x classini kullanabiliriz. Displayin 4 adet
+                buyuklugu
+                vardir.
+                <h1 class="display-1">Display-1</h1>
+                <h1 class="display-2">Display-2</h1>
+                <h1 class="display-3">Display-3</h1>
+                <h1 class="display-4">Display-4</h1>
+            </li>
+            <li>Paragraf etiketleri icin de otomatik atanmis degerler bootstrap icerisinde mevcuttur.
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta ex nam amet consequuntur cupiditate?
+                    Cumque
+                    doloribus explicabo rerum enim delectus dolore perferendis possimus quod! Ad ab dolores molestias
+                    pariatur ut!
+                </p>
+            </li>
+            <li>Eger paragrafa okunabilirlik katmak istersek <b>lead</b> classi eklenebilir. <p class="lead">Lorem ipsum
+                    dolor, sit amet
+                    consectetur adipisicing elit. Vitae aliquam blanditiis consequuntur tenetur expedita eos qui
+                    explicabo eveniet
+                    laboriosam commodi! Cum nemo, vero quisquam quos facere beatae error commodi quidem!</p>
+            </li>
+            <li>Text transfrom kodlari ile yazilari lowercase,uppercase ve capitalized text olarak nitelendirebiliriz.
+                <p>ex : text-capitalize</p>
+                <p class="text-lowercase">LOWERCASE</p>
+                <p class="text-uppercase">uppercase</p>
+                <p class="text-capitalize">capitalized text</p>
+            </li>
+            <li>Yazilarin stillerini de belirli classlar yardimiyla degistirebiliyoruz. bold,normal.light ve italic gibi
+                <p class="font-weight-bold text-capitalize">bold text</p>
+                <p class="font-weight-normal text-capitalize">normal weight text</p>
+                <p class="font-weight-light text-capitalize">light weight text</p>
+                <p class="font-italic text-capitalize">italic text</p>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2>Renkler</h2>
+        <ul>
+            <li>Renkler için tasarlanmış hazır class kodları var. Her etikete göre farklı farklı classlar bulunabiliyor.
+            </li>
+            <li>Text'ler için text-x şeklinde class tanımlamaları yapılabilir.
+                <ul>
+                    <li>
+                        <p class="text-primary">text-primary</p>
+                        <p class="text-secondary">text-secondary</p>
+                        <p class="text-success">text-success</p>
+                        <p class="text-danger">text-danger</p>
+                        <p class="text-warning">text-warning</p>
+                        <p class="text-info">text-info</p>
+                        <p class="text-light bg-dark">text-light</p>
+                        <p class="text-dark">text-dark</p>
+                        <p class="text-muted">text-muted</p>
+                        <p class="text-white bg-dark">text-white</p>
+
+
+                    </li>
+                </ul>
+            </li>
+            <li>Classlar sadece bir sınıf için kullanılmaz, her sınıf için kullanılabilir. (a etiketi için text-danger
+                kullanımı)
+                <p><a href="#" class="text-danger">text-danger</a></p>
+            </li>
+            <li>Background renkleri için bg-x şeklinde kullanım yapılabilir.
+                <div class="bg-warning">selam</div>
+            </li>
+            <li>Span etiketleri için farklı kullanımlar mevcuttur.
+                <ul>
+                    <li>Kenarları yumuşak, arka zemini boyanmış olan bir yazı için "badge badge-x" şeklinde bir kullanım
+                        yapılır.
+                        <p> <span class="badge badge-secondary">badge-secondary</span></p>
+                    </li>
+                    <li>Aynı classlara badge-pill eklenmesiyle daha da yuvarlatılmış kenarlar elde edebiliriz.
+                        <p> <span class="badge badge-pill badge-secondary">badge-secondary</span></p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2>Buttons</h2>
+        <ul>
+            <li>Bootstrap içerisinde button oluşturmak ve onlar farklı yerlerde kullanmak çok basittir.</li>
+            <li>
+                <p class="lead">btn btn-x ...</p> şeklindeki kullanım ile istediğimiz renk kodunu vererek buton
+                oluşturabiliriz. <br>
+                <button class="btn btn-primary" type="button">primary</button>
+                <button class="btn btn-secondary" type="button">secondary</button>
+                <button class="btn btn-success" type="button">success</button>
+                <button class="btn btn-danger" type="button">danger</button>
+                <button class="btn btn-warning" type="button">warning</button>
+                <button class="btn btn-info" type="button">info</button>
+                <button class="btn btn-light" type="button">light</button>
+                <button class="btn btn-dark" type="button">dark</button>
+                <button class="btn btn-muted" type="button">muted</button>
+                <button class="btn btn-white" type="button">white</button>
+            </li>
+            <li>Buton classlarını a etiketleri için de kullanabiliriz. <br>
+                <a href="#" class="btn btn-dark">a</a>
+            </li>
+            <li>
+                <p class="lead">btn btn-outline-x</p>
+                şeklinde dış çizgileri daha belirgin butonlar oluşturabiliriz. <br>
+                <button class="btn btn-outline-primary" type="button">primary</button>
+                <button class="btn btn-outline-secondary" type="button">secondary</button>
+                <button class="btn btn-outline-success" type="button">success</button>
+                <button class="btn btn-outline-danger" type="button">danger</button>
+                <button class="btn btn-outline-warning" type="button">warning</button>
+                <button class="btn btn-outline-info" type="button">info</button>
+                <button class="btn btn-outline-light" type="button">light</button>
+                <button class="btn btn-outline-dark" type="button">dark</button>
+                <button class="btn btn-outline-muted" type="button">muted</button>
+                <button class="btn btn-outline-white" type="button">white</button>
+            </li>
+            <li>Butonların boyutlarını da yine class isimleri vererek ayarlayabiliriz.
+                <button class="btn btn-success btn-lg">btn-lg</button>
+                <button class="btn btn-success btn-sm">btn-sm</button>
+            </li>
+            <li>Satırı olduğu gibi kaplayan block butonu da oluşturabiliriz.
+                <button class="btn btn-danger btn-lg btn-block">btn-block</button>
+            </li>
+            <li>Üzerine tıklanmış gibi bir active özelliği verebiliriz. <button
+                    class="btn btn-danger active">active</button>
+            </li>
+            <li>
+                Tıklanamaz bir button oluşturmak için button etiketi içerisine, class etiketinin dışarısına disabled
+                eklenmesi gerekir. <br>
+                <button class="btn btn-primary" disabled>disabled</button>
+            </li>
+            <li>
+                Butonları gruplayarak yanyana ya da alt alta bitişik şekilde konumlandırma şansımız var. Bunun için
+                öncelikle gruplayacağımız butonları bir div içerisine almak. Daha sonrasında o div'e <span
+                    class="lead">btn-group</span> classını
+                vermek olacaktır.
+                <div class="btn-group">
+                    <button class="btn btn-primary" type="button">primary</button>
+                    <button class="btn btn-secondary" type="button">secondary</button>
+                    <button class="btn btn-success" type="button">success</button>
+                </div>
+            </li>
+            <li>Eğer gruplayamayı alt alta yapmak istersek div'e <span class="lead">btn-group-vertical</span> classını
+                vermemiz yeterlidir.
+                <br> <br>
+
+                <div class="btn-group-vertical">
+                    <button class="btn btn-primary" type="button">primary</button>
+                    <button class="btn btn-secondary" type="button">secondary</button>
+                    <button class="btn btn-success" type="button">success</button>
+                </div>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2>Margin & Padding</h2>
+        <ul>
+            <li>Margin ve padding kullanımı bootstrap de olduğu gibi yine classlar üzerinden yapılır.</li>
+            <li>Maksimum 0dan 5e kadar deger alirlar.</li>
+            <Li>Kullanimi ise margin icin m-0,m-1,m-2,m-3,m-4,m-5 seklindedir. Padding icin de aynisi p seklinde devam
+                eder.</Li>
+            <li>Margin icin
+                <ul>
+                    <li>Margin Right icin mr-x</li>
+                    <li>Margin Left icin ml-x</li>
+                    <li>Margin Top icin mt-x</li>
+                    <li>Margin Bottom icin mb-x</li>
+                    <li>Eger Top ve Bottom birlikte kullanilacaksa my</li>
+                    <li>Eger Left ve Right birlikte kullanilacaksa mx</li>
+                    <li>Verilen her bir ozellik padding icin m yerine p yazilarak gerceklestirilir.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2>Border & Sizing</h2>
+        <ul>
+            <li>Nesneye class olarak <span class="lead">border</span> eklediğimizde 4 kenardan otomatik olarak bir
+                border eklenir.</li>
+            <div class="w-10 border bg-light p-5"></div>
+            <li>Eğer borderı 4 köşeden değil de belirli köşelerden vermek istersek border-top, border-bottom,
+                border-left, border-right olarak class vererek bunu gerçekleştirebiliriz.</li>
+            <li>Eğer sadece bir köşedeki borderı kaldırmak istersek <span class="lead">border-top-0</span> gibi bir
+                kullanım ile bir köşedeki borderı kaldırabiliriz.</li>
+            <li>Bordera renk vermemiz de mümkün, <span class="lead">border-primary, border-danger</span> gibi
+                kullanımlarla renk vermek mümkün.</li>
+            <li>Border köşelerini yuvarlatmak istediğimizde border bulunan etiketin classına <span
+                    class="lead">rounded</span> ekleyerek kenarları yumuşatabiliriz. Eğer tek bir köşeyi yumuşatmak
+                istersek <span class="lead">rounded-top</span> ile bunu gerçekleştirebiliriz.</li>
+            <li>Sizing kısmında ise etiketin satırda ne kadar alan kaplayacağını ayarlamak için <span
+                    class="lead">w-x</span> şeklinde bir kullanım yapılır. Burada x yerine etiketin yüzde kaç alan
+                kaplayacağı yazılır.</li>
+            <li>Aynı durum yükseklik için de geçerli. Onda da <span class="lead">h-x</span> gibi bir kullanım vardır.
+            </li>
+            <li>Son olarak <span class="lead">shadow</span> classı ile belirli bir gölge etikete verilebilir. Bunun
+                boyutları da vardır, <span class="lead">shadow-sm, shadow-lg</span> gibi</li>
+        </ul>
+
+        <hr>
+
+        <h2>Text Align & Display</h2>
+        <ul>
+            <li class="text-right">Text align ayarlamak icin class olarak <span class="lead">text-center, text-justify,
+                    text-left, text-right</span> gibi ornekler eklenebilir.</li>
+            <li>
+                <blockquote class="blockquote">
+                    Blockquote kullanimi
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, voluptas! Officiis,
+                        voluptates labore. Ipsum, quod esse. Ex modi necessitatibus iste at sequi fuga? Assumenda minima
+                        sed pariatur vel odit doloremque.</p>
+                    <footer class="blockquote-footer">Delibalta</footer>
+                </blockquote>
+            </li>
+            <li>Display ozelligini degistirmek icin <span class="lead">d-block, d-inline, d-inline-block, d-none</span>
+                classlari eklenir.</li>
+
+        </ul>
+
+        <hr>
+
+        <h2>Tables</h2>
+        <ul>
+            <li>table için birden fazla renk ve özellik bulunmaktadır.</li>
+            <li>table-dark,table-light gibi renk özellikleri table,thead,tr,td,th gibi tüm etiketlere verilip renk bu
+                şekilde ayarlanabilir.</li>
+            <li>table-hover classı ile mouse hover olayı gerçekleştiğinde o rowda bg kararma olur.</li>
+            <li>table-stripped classı rowların bir koyu bir açık olmasını sağlar.</li>
+            <li>table-bordered classı tabloya border ekler.</li>
+        </ul>
+
+        <hr>
+
+        <h2>List & List Groups</h2>
+        <ul>
+            <li> ul ya da ol etiketine list-unstyled classını verirsek li elemanlarının başındaki işaret kaldırılır.
+            </li>
+            <li>list-inline classı ul ya da ol etiketine, ayrıca her bir li etiketine list-inline-item classı verilirse
+                liste inline-block özelliği kazanır.</li>
+            <li>ul etiketine list-group classı ve li elemanlarına list-group-item classı verildiğinde tablo şeklinde bir
+                list group oluşur.</li>
+            <li>list-grouplar içerisinde a etiketi de uygun bir şekilde kullanılabilir. bunun için de her bir li
+                elamanına list-group-item ve list-group-item-action classları verilmelidir.</li>
+            <li>ul etiketine list-group ve list-group-flush özelliğini verirsek grubun sağ ve soldaki corderları kalkar.
+                Böylece cardlar veya başka divler içerisine yerleştirildiğinde borderlar çakışmaz.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Alert & Media Objects</h2>
+        <ul>
+            <li>Kullanıcılara renkli uyarılar vermek için alert classı kullanılır.</li>
+            <li>Alert oluşturmak için bir dive alert ve alert-primary tarzında iki class eklememiz gerekir.</li>
+            <li>Eğer alert kutusu içerisine bir link eklemek istersek a etiketine aler-link classını veririz.</li>
+            <li>Örnek alert <div class="alert alert-danger d-inline-block">Alert! <a href="#"
+                        class="alert-link">link</a></div>
+            </li>
+            <li>Alert kutuları kapatılabilir özelliğe sahiptir. Bu özellik için öncelikle alert olan dive <span
+                    class="lead">alert-dismissible</span> classını vermemiz gerekiyor. Bu classı verdikten sonra default
+                olarak kutu display none olarak ayarlanmıştır. show classını verirsek başta görünür hale gelir. Ayrıca
+                kutuyu kapatırken transection kullanıp efektli kaybetmek için kutuya fade classını da veririz.</li>
+            <li>Aynı alert kutusunu kapatabilmek için de bir butona ihtiyaç vardır.</li>
+            <li>button etiketine type = "button", class = "close", data-dismiss = "alert" özelliklerini vermemiz
+                gerekiyor.</li>
+            <li>Ayrıca button içerisine bir span etiketi oluşturup etiket içerisine de &times eklememiz gerekiyor.
+                Böylece çarpı gözükecektir.</li>
+            <li>
+                <div class="alert alert-dark fade show">Alert 2! <button type="button" class="close"
+                        data-dismiss="alert"><span>&times;</span></button></div>
+            </li>
+            <li>Media objeleri de ardarda fotoğraflı yorum oluşturmak için ideal bi class.</li>
+            <li>
+                <div class="media">
+                    <img src="https://via.placeholder.com/72x72" class="mr-3">
+                    <div class="media-body">
+                        <h5>Lorem, ipsum dolor.</h5>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus sed
+                        voluptate quam itaque, minus quidem quibusdam dolorum in non, rem rerum a eius, vitae laboriosam
+                        error doloribus cum suscipit quia.
+                    </div>
+                </div>
+            </li>
+            <li>Aynı işlem ul etiketiyle de gerçekleştirilebilir. Fakat iç içe yorumlar eklenmek istenirse media-body
+                içerisine yeni bir media elemanı eklenerek bu işlem devam eder.</li>
+            <li>
+                <ul class="list-unstyled">
+                    <li class="media">
+                        <img src="https://via.placeholder.com/72x72" class="mr-3">
+                        <div class="media-body">
+                            <h5>Lorem, ipsum dolor.</h5>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus sed
+                            voluptate quam itaque, minus quidem quibusdam dolorum in non, rem rerum a eius, vitae
+                            laboriosam
+                            error doloribus cum suscipit quia.
+                        </div>
+                    </li>
+
+                    <li class="media">
+                        <img src="https://via.placeholder.com/72x72" class="mr-3">
+                        <div class="media-body">
+                            <h5>Lorem, ipsum dolor.</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus sed
+                                voluptate quam itaque, minus quidem quibusdam dolorum in non, rem rerum a eius, vitae
+                                laboriosam
+                                error doloribus cum suscipit quia.</p>
+
+                        </div>
+
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2>Image</h2>
+        <ul>
+            <li>img'ye verilebilecek classlar aşağıdadır.</li>
+            <li>rounded > kenarlarını yumuşatır.</li>
+            <li>rounded-circle > yuvarlak bir görüntü verir.</li>
+            <li>img-thumbnail > etrafına küçük bir çerçeve ekler.</li>
+            <li>img-fluid fotoğrafı responsive hale getirir.</li>
+        </ul>
+
+        <hr>
+
+        <h2>Forms & Input Groups</h2>
+        <ul>
+            <li>Çok detay var lazım olduğunda offical documentation'a bak</li>
+        </ul>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
