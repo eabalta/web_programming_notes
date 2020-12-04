@@ -1,0 +1,75 @@
+/* 
+(*) => tüm etiketler
+(p)    => tüm p etiketleri
+(div p) => div içindeki tüm p etiketleri
+(div,p) => tüm div ve tüm p etiketleri
+(div > p) => üst etiketi div olan tüm p etiketleri
+(p ~ div)=> p ile aynı seviyede tüm div etiketleri
+(p + div)=> p etiketinden sonra gelen aynı seviyedeki div etiketi
+*/
+
+/* herbir elemana border ekler
+
+* {
+    border: 1px solid blueviolet;
+}
+*/
+
+
+/* sayfadaki tum p etiketlerine bu ozelligi ekler
+
+p {
+    border: 1px solid red;
+}
+
+*/
+
+/* herhangi bir div icerisindeki tum p etiketlerini etkiler
+
+div p{
+    border: 1px solid red;
+}
+*/
+
+/* container divi icerisindeki tum divleri etkiler
+.container div{
+    border: 1px solid red;
+}
+*/
+
+/* container divi icerisindeki divlerden sadece classi box olan divleri etkiler
+.container div.box{
+    border: 1px solid red;
+}
+*/
+
+/* sayfa icerisindeki tum divleri ve tum p leri etkiler
+div,p {
+    border: 1px solid red;
+}
+*/
+
+/* sayfadaki classi box olan tum divleri ve tum pleri secer
+div.box,p{
+    border: 1px solid red;
+}
+*/
+
+/* bir ust parenti div olan tum p leri secer
+
+div>p{
+    border: 1px solid red;
+}
+*/
+
+/* p etiketi ile ayni seviyede olan ve p etiketinden sonra gelen tum div etiketlerini etkiler
+p~div{
+    border: 1px solid red;
+}
+*/
+
+/* p etiketi ile ayni seviyede olan ve p etiketinden sonra gelen ILK divi secer. bir ustteki tum divleri secerdi
+p+div{
+    border: 1px solid red;
+}
+*/

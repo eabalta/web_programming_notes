@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            display: flex;
+            background-color: goldenrod;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .item1 {
+            padding: 15px;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        .item1:hover {
+            background-color: rgb(233, 184, 61);
+        }
+
+        @media screen and (max-width: 800px) {
+            nav {
+                justify-content: space-around;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <nav>
+
+
+        <div class="item1 home">
+            <p>Home</p>
+        </div>
+
+        <div class="item1 about">
+            <p>About</p>
+        </div>
+
+        <div class="item1 products">
+            <p>Products</p>
+        </div>
+
+        <div class="item1 contacts">
+            <p>Contacts</p>
+        </div>
+
+
+    </nav>
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+/*Pseudo Element*/
+/* Bir etiket icerisindeki bir parcasini secmek istersek p.e. kullaniliriz.*/
+
+/* p etiketlerinin ilk satirini etkiler */
+p::first-line{
+	font-weight: bold;
+	color: brown;
+	word-spacing: 2px;
+	letter-spacing: 1px;
+}
+
+/* p etiketlerinden classi about olan etiketin first-line i secilir*/
+p.about::first-line{
+	color:green;
+}
+
+/* p etiketlerinin ilk harfi secilir*/
+p::first-letter{
+	font-size: 48px;
+}
+
+/* her p etiketinden sonra asagida verilen degerler gerceklestirilir*/
+p::after{
+	content: "";
+	display: block;
+	background-color: yellow;
+	padding: 10px;
+}
+
+
+/*Pseudo Class*/
+/*Kapsam icerisindeki bir elemani secerken de p.c. kullaniyoruz.*/
+
+ul li {
+	padding: 10px;
+	margin-bottom: 10px;
+	list-style: none;
+}
+
+/* ul kapsami icerisinden li secmek istenmis, li nin de ilk eleman olani secilmis.*/
+ul li:first-child{
+	background-color: red;
+}
+
+/* ul kapsami icerisinden li secmek istenmis, li nin de son eleman olani secilmis.*/
+ul li:last-child{
+	background-color: red;
+}
+
+/* ul kapsami icerisinden li secmek istenmis, li nin de nth-of-type(even) ifadesiyle cift li elemanlari secilmis.*/
+ul li:nth-of-type(even){
+	border: 2px solid green;
+}
+
+/* ul kapsami icerisinden li secmek istenmis, li nin de nth-of-type(odd) ifadesiyle tek li elemanlari secilmis.*/
+ul li:nth-of-type(odd){
+	border: 2px solid blue;	
+}
+
+a {
+	padding: 5px 8px;
+	text-decoration: none;
+	display: block;
+	width: 80px;
+	border:1px solid gray;
+	margin-bottom: 10px;
+}
+
+/* linkin tiklanmamis halinden bahsedilir */
+a:link{
+	color: red;
+}
+/* link tiklanmis ve ziyaret edilmisse */
+a:visited{
+	color:gray;
+}
+/* uzerine mouse ile geldigimiz zaman */
+a:hover{
+	color:white;
+	background: green;
+}
+/* mouse ile linkin uzerine tiklandigi andaki goruntusudur */
+a:active{
+	color:green;
+	background: gold;
+}
+
+
+/* burada span etiketinin varsayilan ozellikleri atanmis */
+span{
+	display: none;
+	background: yellow;
+	padding: 20px;
+}
+/* div kapsaminin uzerine gelindiginde bu kod calisir.
+    calisan bu kod span'i niteler.
+    div:hover normal yazim  gibi gozukur fakar etkilenen taraf span oldugu icin sagda o yer alir.
+    Bir nevi if gibi dusunulebilir*/
+div:hover span {
+	display: block;
+}

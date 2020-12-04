@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            width: 1024px;
+            margin: 30px auto;
+            font-size: 20px;
+            line-height: 150%;
+            word-spacing: 3px;
+        }
+
+
+        /* Transition Effects*/
+        #trans {
+            margin: 30px;
+            border: 2px solid rgba(51, 51, 51, 0.6);
+            border-radius: 8px;
+            display: inline-block;
+            background-color: #ffffff;
+            width: 100px;
+            padding: 12px 30px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            transition: all 1s;
+            box-shadow: 10px 10px 5px rgba(51, 51, 51, 0.2);
+        }
+
+        #trans:hover {
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            background-color: #333;
+            width: 150px;
+            color: #ffffff;
+            font-size: 25px;
+            box-shadow: none;
+        }
+    </style>
+    <title>CSS Notes</title>
+</head>
+
+<body>
+
+    <h1>CSS Notes</h1>
+    <hr>
+
+    <h3>CSS Syntax</h3>
+    <ul>
+        <li><img src="img/syntax.png" width="300">
+            <ul>
+                <li>Burada selector, css kodunun hangi etikete etki edecegini belirler.</li>
+                <li>Declaraction icerisinde ise en basta hangi ozellik belirlenecekse o yazilir, :'dan sonra ise
+                    ozelligin alacagi deger verilir. Sonrasinda ; ile bitirilir. Java Syntaxi ile benzer sekilde.</li>
+            </ul>
+        </li>
+        <li>Ex: <img src="img/syntax2.png" width="300"></li>
+    </ul>
+    <hr>
+
+    <h3>CSS Yazim Sekilleri</h3>
+
+    <h5>Internal CSS</h5>
+    <ul>
+        <li>CSS Kodlari sadece o html sayfasi icin gecerli olacaksa internal css kullanmak mantiklidir.</li>
+        <li>Internal CSS icerisindeki verilen selector etiketler, sayfa icerisindeki ayni etiketteki tum degerleri
+            degistirirler. Yani toplu bir duzenleme soz konusudur.</li>
+        <li>Head etiketi altina style etiketi olusturup bunun icerisine css kodlarinin yazilmasina Internal CSS denir.
+        </li>
+    </ul>
+
+    <h5>Inline CSS</h5>
+    <ul>
+        <li>Internal CSS sayfadaki etiketleri toplu bir sekilde duzenleme yapar.</li>
+        <li>Eger toplu duzenlemelerde istemedigimiz bir ozelligi ya da sadece o degere bir css ozelligi atamak istersek
+            Inline CSS kullaniriz.</li>
+        <li>Inline CSS, duzenlenecek etiketin baslangic etiketinde yazilir. Baslangic etiketinin icerisine style=""
+            attr. eklenir. Eklenen bu attr. icerisine internal css te oldugu gibi suslu parantez icerisindeki degerler
+            yan yana yazilir.</li>
+        <li>Inline CSS icerisinde herhangi bir deger Internal CSS icerisinde de tanimlanmis ise Inline icerisindeki
+            deger gecerli olur. Yani Internale gore daha etkindir.</li>
+    </ul>
+
+    <h5>External CSS</h5>
+    <ul>
+        <li>CSS Kodlarini farkli html sayfalarinda kullanmak istenirse herhangibirisim.css seklinde dosya olusturulup
+            Internal CSS de yazildigi gibi suslu parantezlerle css kodu yazilir.</li>
+        <li>Bu CSS dosyasini html dosyasina eklemek icin <b>head</b> etiketine altina <b>link etiketi eklenir.</b> Ex:
+            <b> link rel="stylesheet" href="style.css"</b></li>
+        <li>Internal CSS te yazilan kodlar External CSS ten daha onemlidir. Yani her iki kodda da color yer aliyorsa
+            Internal CSSteki deger gecerli olur.</li>
+    </ul>
+
+    <p>Hepsi birlikte yazilmissa gecerlilik sirasi : Inline CSS > Internal CSS > External CSS</p>
+    <hr>
+
+    <h3>ID ve Class</h3>
+    <ul>
+        <li>Oncelikle CSS calismalari genelde Internal ya da External yapilir. Inline yapilmasi tavsiye edilmez.</li>
+        <li>Css kodlarina ulasmanin bircok yolu vardir.
+            <ol>
+                <li>Genel etiket yoluyla ozellikleri belirleme(p,li..)
+                    <ul>
+                        <li>p{ color:red; }</li>
+                    </ul>
+                </li>
+                <li>. ile baslayarak bir class tanimlayip ozellikleri icerisinde belirtmek. Daha sonrasinda bu
+                    ozellikleri kullanacak etiketin baslangicinda class attr. icerisine eklemek
+                    <ul>
+                        <li> (style icerisi) .ornekclass{ font-size:20px; } <br>
+                            (body icerisi) p class="ornekclass" seklinde kullanilir
+                        </li>
+                    </ul>
+                </li>
+                <li>Css kodu yazilacak etikete bir unique id atamak ve daha sonrasinda #id seklinde internal css
+                    tanimlamak
+                    <ul>
+                        <li> (style icerisi) #IDDegeri{ font-size:40px; } <br>
+                            (body icerisi) p id="#IDDegeri" seklinde kullanilir
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li>1. Yontem ismi verilen tum etiketleri ayni ozellikler verir</li>
+        <li>2. Yontem verilen ozellikleri birden fazla etikete atanabilir ve ayni etikete birden fazla class da
+            atanabilir</li>
+        <li>3. Yontem ise sadece o id'ye sahip etiketi niteler</li>
+    </ul>
+    <hr>
+
+    <h3>Selectors</h3>
+    <p>Id , etiket ismi ve class olarak etiketlere ulaşabileceğimiz 3 temel yöntemden başka kullanabileceğimiz belli
+        amaçlara göre hazırlanmış Selector türleri vardır. <br>Bu selector türlerini şu şekilde gruplayabiliriz ;</p>
+    <ul>
+        <li>Group Selectors</li>
+        <li>Attribute Selectors</li>
+        <li>Pseudo Selectors</li>
+    </ul>
+    <ul>
+        <li>
+            <h4>Group Selectors</h4>
+            <ul>
+                <li>
+                    <p>Css Group Selector' larını bir kapsam içinde aradığımız etiketler için kullanıyoruz. Örneğin
+                        farklı
+                        seviyelerde olan bir < p> etiketini düşünelim ;</p>
+
+                    <ul>
+                        <li>
+                            <p>
+                                < div> <br>
+                                    < p id="first"> </ p><br>
+                                    < p class="description"> </ p><br>
+                                    < /div> <br>
+                                        < p>
+                                            < /p> </p> </li> </ul> <br>
+                                                ve bu etiketlerden sadece div altındaki p etiketlerine ulaşmak
+                                                istiyorsak bu
+                                                durumda group selectors' ları kullanmamız gerekiyor.
+                                                <p>
+                                                    div p {<br>
+                                                    /* div altındaki tüm p etiketleri */<br>
+                                                    }<br>
+                                                    <br>
+                                                    div #first{<br>
+                                                    /* div altında id' si first olan eleman */<br>
+                                                    }<br>
+                                                    <br>
+                                                    div .description{<br>
+                                                    /* div altında class' ı description olan eleman */<br>
+                                                    }
+                                                </p>
+                        </li>
+                        <li><b>Diğer group selector kullanımları ;</b>
+                            <ol>
+                                <li> (*) => tüm etiketler </li>
+                                <li>(p) => tüm p etiketleri</li>
+                                <li>(div p) => div içindeki tüm p etiketleri</li>
+                                <li>(div,p) => tüm div ve tüm p etiketleri</li>
+                                <li>(div > p) => üst etiketi div olan tüm p etiketleri</li>
+                                <li>(p ~ div)=> p ile aynı seviyede tüm div etiketleri</li>
+                                <li>(p + div)=> p etiketinden sonra gelen aynı seviyedeki div etiketi</li>
+                            </ol>
+                        </li>
+                        <li>Ornekler: <br>
+                            <a href="selectors/group.html" target="_blank">Group.html - </a><a
+                                href="selectors/gstyle.css" target="_blank">Style.css</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Attribute Selectors</h4>
+                    <ul>
+                        <li>
+                            Attribute Selector' larını etiketlerde belirtilen attribute özelliğine göre kullanıyoruz.
+                        </li>
+                        <li>Ornegin; <br>
+                            < img src="resim.jpg" alt="doğa resimleri"><br>
+                                img etiketi için src ve alt özelliği bir attribute özelliğidir ve bu img etiketine
+                                ulaşabilmek
+                                için bu attribute özelliklerini kullanabiliriz.
+                        </li>
+                        <li>Ornekler : <br>
+                            <a href="selectors/attribute.html" target="_blank">Attribute.html -</a><a
+                                href="selectors/astyle.css" target="_blank">Astyle.css</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Pseudo Selectors</h4>
+                    <ul>
+                        <li>Pseudo Selectors' lar 2 grup altında ele alınıyor.
+                            <ul>
+                                <li>Pseudo Classes</li>
+                                <li>Pseudo Elements</li>
+                            </ul>
+                        </li>
+                        <li><b>Pseudo Class Selector' ları html etiketlerinin durumunu kontrol ettikten sonra
+                                uygulayacağımız
+                                css kodları için kullanılır.</b>
+
+                            <ul>
+                                <li>Syntax: <br>
+                                    <p>selector:pseudo-class {</p>
+                                    <p>property:value;}</p>
+                                </li>
+
+                                <li>
+                                    < a> etiketi için kullanabileceğimiz pseudo class selector kullanımları ;
+                                        <ul>
+                                            <li>
+                                                <p>/* henüz ziyaret edilmemiş link */</p>
+                                                <p>a:link {</p>
+                                                <p>color: blue; }</p>
+                                            </li>
+
+                                            <li>
+                                                <p>/* ziyaret edilmiş link */</p>
+                                                <p>a:visited {</p>
+                                                <p>color: black; }</p>
+                                            </li>
+
+                                            <li>
+                                                <p>/* mouse link uzerindeyken */</p>
+                                                <p>a:hover {</p>
+                                                <p>color: yellow; }</p>
+                                            </li>
+
+                                            <li>
+                                                <p>/* linke tiklama ani */</p>
+                                                <p>a:active {</p>
+                                                <p>color: red; }</p>
+                                            </li>
+                                        </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><b>Pseudo Element Selector' ları ise bir etiketinin her hangi bir parçasını seçmek
+                                istediğimizde
+                                kullanırız. Pseudo class selector' larından farklı olarak "::" sembolü kullanılır.</b>
+                            <ul>
+                                <li>Syntax: <br>
+                                    <p>selector::pseudo-element {</p>
+                                    <p>property:value; }</p>
+                                </li>
+
+                                <li>Örneğin; < p> etiketinin kapsamındaki yazı içinde ilk satırı seçmek istersek
+                                        ::first-line
+                                        özelliğini kullanabiliriz.
+                                        <ul>
+                                            <li>
+                                                <p>p::first-line {</p>
+                                                <p> color: red;
+                                                    }</p>
+                                            </li>
+                                        </ul>
+                                </li>
+                            </ul>
+
+
+                        </li>
+                        <li>Ornekler : <br>
+                            <a href="selectors/pseudo.html" target="_blank">Pseudo.html -</a><a
+                                href="selectors/pstyle.css" target="_blank">Pstyle.css</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <hr>
+
+            <h3>CSS Inherit</h3>
+            <ul>
+                <li>CSS Inherit aslinda oop'de gecen inheritence mantigidir. </li>
+                <li>CSS'te en distaki body ye verilen ozellikler altindaki tum etiketler icin gecerli olur.</li>
+                <li>Fakat her bir etikete farkli css kodlari yazmaya baslarsak artik o ozellikler gecerli olur.</li>
+                <li>Yani parentlarin ozellikleri childlara gecer fakat childlarda da ayni ozellikler varsa child
+                    icerisindeki ozellikler gecerli olur.</li>
+                <li>Yani CSS inherit de ozel olan kodlar daha onemli ve gecerli olurlar.</li>
+                <li><b>Etiket Kodlari < Class Kodlari < ID Kodlari</b> </li> <li>Fakat bazi kodlar inheritence durumunu
+                            kullanmaz. Mesela a etiketi. Bu deger icin inherit kullanmak istersek a etiketi icin yazilan
+                            css kodu icerisine hangi deger inherit edilmek isterse ona inherit degeri atanir. <br> Ornek
+                            : <b>color=inherit;</b></li>
+                <li>Eger yazilan degerin kesinlikle calismasini istersek <b>!important</b> anahtar kelimesini kullanarak
+                    gecerli kilabiliriz. <br> Ornek : <b>color="orange" !important</b></li>
+            </ul>
+            <hr>
+
+            <h3>Divs</h3>
+            <ul>
+                <li>Division kisaltmasidir.</li>
+                <li>Site uzerinde herhangi bir bolme olusturmak istersek div etiketini kullaniliriz.</li>
+                <li>Bu bolmenin tum elemanlarini ortak olarak ozellestirip,hareket ettirebiliriz.</li>
+                <li>Eger div etiketine herhangi bir yukseklik degeri atarsak icerisindeki elemanlarin bu etiket disina
+                    cikma sorunu yasanabilir. (overflow) <br>
+                    Bunu engellemek icin div icerisine overflow adli bir ozellik daha eklenir. Overflowa scroll,auto ya
+                    da hidden tarzi specs verilebilir.</li>
+                <li>Ornek: <br> <a href="selectors/training/divs/index.html" target="_blank">index.html</a><br><a
+                        href="selectors/training/divs/style.css" target="_blank">style.css</a></li>
+            </ul>
+            <hr>
+
+            <h2>CSS Konumlandirma</h2>
+
+            <h3>Floating Images</h3>
+            <ul>
+                <li>Inline olarak eklenen elemanlar sayfada yanyana gelirler. <br>
+                    Block olarak eklenen elemanler ise sayfada alt alta gelirler.</li>
+                <li>Elemanlari sayfanin belli bir konumuna yerlestirmek istiyorsak burada floating komutunu
+                    kullaniliriz.</li>
+                <li>Normalde p etiketi icerisinde bir img ve bir metin kullanildiginda (img bastaysa) yazi hemen imgnin
+                    sonundan devam eder. Duzgun bir goruntu olusturulmaz. Float anahtar kelimesiyle biz bu fotografi
+                    belirli bir konuma yerlestirebiliriz.</li>
+                <li>Eger yukarida bahsedilen img etiketi iceren p etiketine bir obrder verilecek olursa, burada border
+                    yaziyi referans alir. Yani yazinin boyutu resimden kisa kalirsa border resmin altindan gecer. Bunun
+                    sebeb' float degeri verilen etiket normal akisin disina cikmis olur.</li>
+                <li>Boyle kullanimlarda cozum sudur; <br> icinde float kullanilan bir etiket varsa (float kullanilan
+                    etiketin bir ust etiketi) bu etiketin class degerine clear atanir. <br> Daha sonrasinda bu clear
+                    classina overflow keywordu atanarak sorun cozulur.</li>
+                <li>Ornek: <br>
+                    <b>Only Border:</b>
+                    <p style="border: 2px solid gray;">
+                        <img src="img/1_HClbbUTEEzekU31ae3ZGnA.png" style="width: 200px;">
+                        Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Ratione libero,
+                        dignissimos nesciunt aut
+                        pariatur numquam aperiam perferendis quae in modi earum alias tenetur est quasi possimus dolore
+                        soluta maiores dolorem. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
+                        eveniet ipsa molestiae omnis, ullam vero cum dolorum voluptate sint, ratione alias expedita
+                        temporibus. Porro vero deleniti ipsum exercitationem similique nesciunt?
+                    </p>
+                    <br>
+                    <b>Only Float:</b>
+                    <p style="border: 2px solid gray;">
+                        <img src="img/1_HClbbUTEEzekU31ae3ZGnA.png" style="width: 200px; float: left;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, quisquam, explicabo
+                        incidunt illum nostrum, iusto doloribus magni perferendis earum numquam beatae ipsum dolore
+                        voluptas fugit tenetur accusantium accusamus ab. Itaque.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus animi laboriosam,
+                        reiciendis tempora excepturi non fuga sint sed, magni ut aliquid aspernatur porro natus. Aliquam
+                        possimus odio corporis tempora ipsam.
+                    </p>
+                    <br>
+                    <br>
+                    <b>Float,Overflow and Border:</b>
+                    <p style="overflow: auto; border: 2px solid gray;">
+                        <img src="img/1_HClbbUTEEzekU31ae3ZGnA.png" style="width: 200px; float: left;">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat perferendis rem minus
+                        reprehenderit eveniet laborum ipsam aspernatur consectetur quae? Enim ad et officia consequuntur
+                        ratione reprehenderit voluptas laboriosam omnis fugiat.
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit sapiente iusto esse
+                        blanditiis nisi? In doloremque rem, numquam facere consectetur nemo vitae voluptatem, voluptatum
+                        eligendi ipsam praesentium itaque saepe odit!
+                    </p>
+                </li>
+            </ul>
+
+            <h3>Floating Divs</h3>
+            <ul>
+                <li>Burada onemli olan kisim float eklenen divlerin akis disina cikmasi.</li>
+                <li>Bu yuzden varsa container divinin ozellikleri kaybolur, cunku icerisindeki divler akis disina
+                    cikmistir.</li>
+                <li>Bunu cozmenin birkac yolu var;<br>
+                    <b>*</b> container divine clear classi verip internal css tanimlarken clear classina overflow: auto
+                    olarak
+                    tanimlamak <br>
+                    <b>*</b> container div icerisine bir tane daha div eklenir. Bu div'e inline olarak clear: both attr.
+                    verilirmesi <br>
+                    <b>*</b> container divine clearfix classi verip internal css tanimlarken .clearfix:after pseudo
+                    selectorini
+                    kullaniriz. Burada 3 tane ozellik eklenir: <br>
+                    - content : ""; (Bos bir content tanimlanir) <br>
+                    - display : block; <br>
+                    - clear : both; <br>
+                    Diyerek sorun cozulur.
+                </li>
+            </ul>
+
+            <h3>Display</h3>
+            <ul>
+                <li>Displayin alabilecegi dort deger vardir <br>
+                    -none -inline -block -inline-block</li>
+                <li>Inline etiketler icerigi kadar yer kaplarlar ve eklenen her bir etiket yanyana gelmeye devam eder.
+                    Fakat yukseklik ve genislik degerleri verilemez. Icerigi kadar alan kaplar.</li>
+                <li>Block etiketler browserin genisligi kadar alan kaplarlar. Yuksekligi icerik kadardir. Her yeni block
+                    elemani alt alta siralanir. Genislik ve yukseklik verilebilir.</li>
+                <li>Inline-Block elemanlar ise temel ozellikleri inline gibidir, yanyana dizilirler fakat block gibi
+                    genislik ve yukseklikleri ayarlanabilirler.</li>
+                <li>None ise verilen etiketi ekranda gorunmez kilar.</li>
+            </ul>
+
+            <h3>Positioning</h3>
+            <ul>
+                <li>Bu ozellik istedigimiz etiketi, istedigimiz noktaya yerlestirmemizi saglar.</li>
+                <li>Position ozelligi olarak verilen 5 tane deger vardir: <br>
+                    <b>-</b>static <br>
+                    <b>-</b>relative <br>
+                    <b>-</b>fixed <br>
+                    <b>-</b>absolute <br>
+                    <b>-</b>sticky <br>
+                </li>
+                <li><b>static</b>
+                    <ul>
+                        <li>Bu position ozelligi icin varsayilan degerdir. Ilk atanan halini korur.</li>
+                        <li><img src="img/static.PNG" style="width: 500px;"></li>
+                    </ul>
+                </li>
+
+                <li><b>relative</b>
+                    <ul>
+                        <li>Position ozeliigi relative verilen bi ogeyi dort koseden hizalama yapilabilir.
+                        </li>
+                        <img src="img/rel1.PNG" style="width: 500px;">
+                        <li>Eger bir nesnenin top ve left degerlerine 30px atanmis ise bu nesnenin yeni konumu, normal
+                            akistaki konumu referans alinarak ayarlanir. Sinir cizgileri akistaki ilk konumudur.</li>
+                        <img src="img/rel2.PNG" style="width: 500px;">
+                    </ul>
+                </li>
+
+                <li><b>absolute</b>
+                    <ul>
+                        <li>Absolute yapilan nesne normal akisin disina cikar. Relativeden rakli olarak artik body'e
+                            gore hizalanir.</li>
+                        <img src="img/abs.PNG" style="width: 500px;">
+                        <li>Absolute verilen nesne eger bi div icerisindeyse yine body'e gore hizalanir.</li>
+                        <img src="img/abs1.PNG" style="width: 500px;">
+                        <li>Eger bulundugu div'e position olarak relative ozelligi verilirse artik icerisinde bulundugu
+                            dive gore hiza alir. <b>Kisacasi absolute olan nesne relative bir ust etiket arar ve bulursa
+                                ona gore hizalanir, bulamaz ise bodye gore hizalanir.</b></li>
+                        <img src="img/abs2.PNG" style="width: 500px;">
+                    </ul>
+                </li>
+
+                <li><b>fixed</b>
+                    <ul>
+                        <li>Bu kullanim sitelerdeki Canli Sohbet tarzindaki kutular gibi fixed verilen nesnenin
+                            kullanicinin gordugu ekranda surekli sabit kalmasini saglar. Scroll bar kaydirilsa bile
+                            goruntu verilen noktada sabit kalir.</li>
+                        <img src="img/fixed.PNG" style="width: 500px;">
+                        <img src="img/fixed1.PNG" style="width: 500px;">
+
+                    </ul>
+                </li>
+
+                <li><b>sticky</b> <br>
+                    Bunu soyle ozetleyebiliriz; normalde ekran icerisinde yer alan bir eleman scrollbar ile sayfayi
+                    kaydirdigimizda kaybolur. Eger bu eleman sticky olarak yerlestirilirse, ekran kaydirildiktan sonra
+                    bile verilen konumda tarayici da kalmayadevam eder. Bu ozellik sitelerdeki ustte sabit kalan menuler
+                    icin kullanilabilir. <br>
+                    <a href="https://www.w3schools.com/howto/howto_css_sticky_element.asp">Ornek kullanim</a>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h2>Box Model</h2>
+            <ul>
+                <li><b>Margin</b>
+                    <ul>
+                        <li>Margin degeri nesnenin 4 kenarindan etrafina olan boslugu ayarlar.</li>
+                        <li>Bircok kullanimi vardir; <br>
+                            Tek deger verilebilir bu top right bottom ve lefte otomatik olarak atanir. ex: margin :
+                            2px;<br>
+                            Tek tek degerler de verilebilir. Bu degerler toptan baslayip saat yonune dogru devam eder.
+                            ex: margin : 2px(top) 2px(right) 2px(bottom) 2px(left);<br>
+                            Cifter olarak da verilebilir. ex: margin : 2px(top&bottom) 5px(left&right) <br>
+                        </li>
+                        <li>Baslangicta browser body etiketine otomatik bir margin degeri atar. Genelde bu en basta
+                            sifirlanir.</li>
+                        <li>Inline elemanlara ust ve alttan margin etki etmez! Sadece sag ve soldan marginlenebilirler.
+                            Fakat bu da inline-block yontemiyle cozulebilir.</li>
+                        <li>margin : auto: denirse, verilen etiket browserdan otomatik olarak hesaplanarak mutlaka
+                            sayfanin tam ortasina konumlanacak sekilde durur.</li>
+                    </ul>
+                </li>
+                <li><b>Padding</b>
+                    <ul>
+                        <li>Padding, icerik ile koseler arasindaki mesafeyi ayarlar.</li>
+                        <li>Padding tanimlamalari margin ile aynidir.(Siralamalar vs)</li>
+                        <li>Eger padding uygulanacak olan elemanin yukseklik ve genislik degerleri belli ise uygulanan
+                            padding degeri kadar yukseklik ve genisligi buyur. Yani padding degerimiz 50px ise ve
+                            yukseklik,genislik 100px ise son durumda yuks.&genislik 150px durumunda olur.</li>
+                        <li>Eger inline elemanlarda fazla bir padding yaparsak, elemanlar sabit kalir fakat arkaplani
+                            diger ogelerinonune gecer. Yani margin gibi eleman asagiya kaymaz.Normal akistaki yerinde
+                            sabitlenir.</li>
+                    </ul>
+                </li>
+                <li><b>Border</b>
+                    <ul>
+                        <li>Border verilen elemanin cevresinde bir cerceve olusturur.</li>
+                        <li>Bircok olusturma yolu bulunur. Direkt olusturulurken 3 degere ihtiyac duyar. boroder :
+                            boyutu(px) tipi(solid vs) rengi</li>
+                        <li>Her kenara butun ozellikleri tek tek atayabiliriz.</li>
+                        <li>border-radius degeri koseleri yumusatmaya yarar. Eger tam yuvarlak yapmak istersek
+                            <b>border-radius : 50%;</b> yaparsak nesne yuvarlak olur.</li>
+                    </ul>
+                </li>
+                <li><b>Box Model & Box Sizing</b>
+                    <ul>
+                        <li>Box Model elementlerin sayfadaki buyukluk degerleriyle alakali olan temel modeldir.</li>
+                        <img src="img/boxmodel.PNG" style="width: 500px;">
+                        <li>Box Sizing ise bu box modelin nasil hesaplanacagini ayarlar. Iki secenek vardir;</li>
+                        <img src="img/boxsizing.PNG" style="width: 500px;">
+                        <li>Normalde Box Sizing, content-box olarak ayarlidir. content-box ise width ve height
+                            degerlerini hesaplarken isin icerisine margin,padding ve border degerlerini de katar. Ornek
+                            olarak 300px bir element varsa margin,padding ve border ozellikleri de 10px ise bu elemanin
+                            sayfada kaplayacagi alan 360px olur. Bunu padding de son satirda bahsetmistik.</li>
+                        <img src="img/contentbox.PNG" style="width: 500px;">
+                        <li>Eger box-sizing : border-box; olarak tanimlanirsa, elementin sayfadaki width ve height
+                            degerleri elementin buyuklugune ve margin degerine gore hesaplanir. Yani elementin buyuklugu
+                            icerisinde hem element hem border hem de padding degeri de bulunmaktadir.Ornek
+                            olarak 300px bir element varsa margin,padding ve border ozellikleri de 10px ise bu elemanin
+                            sayfada kaplayacagi alan 310px olur. Cunku 300 px icerisinde border ve padding degerleri de
+                            bulunmaktadir. Fakat icerisindeki elemente ayrilan alan azalacaktir. 20+20 = 40px azalir
+                            260px kalir.</li>
+                        <img src="img/borderbox.PNG" style="width: 500px;">
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h2>Fonts & Icons</h2>
+            <ul>
+                <li><b>Fonts</b>
+                    <ul>
+                        <li>Chrome Tarayicisinin default font-size degeri 16px dir.</li>
+                        <li>font-size belirtmenin birkac yolu vardir: <br>
+                            * Normal bir sekilde px degeri verilebilir. font-size: 16px;<br>
+                            * 200% gibi degerler verilerek bodynin o anki degerine gore 2 kat deger yeni elemente
+                            verilir. Yani body 20px ise element 40 px olur. <br>
+                            * 2em de ayni %200 gibi is gorur.</li>
+                        <li>Tarayicilarin destekledigi font turleri vardir, safe fonts vb. Bunlara <a
+                                href="https://www.w3schools.com/css/css_font.asp">W3 School</a>'dan ulasabilirsin.</li>
+                        <li>Desteklenen su sekilde eklenirler <b>font-family: "Times New Roman", Times, serif;</b> </li>
+                        <li>Eger farkli konumdan bir font eklemek istersek burada <a
+                                href="https://fonts.google.com/">Google Fonts</a>'u kullanabiliriz. Google Fonts
+                            uzerindeki link etiketini header icerisine atilir. Daha sonrasinda css ozelligi eklenebilir.
+                        </li>
+                    </ul>
+                </li>
+
+                <li><b>Icons</b>
+                    <ul>
+                        <li>Sitelere icon yerlesirmek icin en kolay yol icon kutuphaneleri bulmak</li>
+                        <li>En populerlerden bir tanesi de <a href="http://www.fontawesome.com">fontawesome.com</a></li>
+                        <li>Gerekli kullanimlari <a
+                                href="https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use">bu
+                                linkten</a> bulabilirsin.</li>
+                    </ul>
+                </li>
+
+                <li><b>Styling Text</b>
+                    <ul>
+                        <li>Blog sayfalari icin genelde onerilen font size 22pxdir.</li>
+                        <li>line-height : 150% ve word-spacing: 3px olmasi okumayi daha da kolaylastirir.</li>
+                        <li>text-indent : x px ozelligi paragraf basi yapmaya yarar.</li>
+                        <li>text-transform ile de uppercase,lowercase ozellikleri tanimlanabilir.</li>
+                        <li></li>
+                    </ul>
+                </li>
+
+                <li>Aligning Text
+                    <ul>
+                        <li>text-align ozelligi standart olarak left, right,center ve justify olarak 4 cesit kullanimi
+                            vardir.</li>
+                        <li>Buradaki justify ozelligi, metin icerisindeki tum kelimelerin saga ve sola yapismasini
+                            saglar. Aralarda gereksiz bosluklar birakilmaz.</li>
+                        <li>text-align islemi elementin kapsamina gore hizalar. Mesele a etiketine sahip bir icerigin
+                            kapsami icerikteki metin kadardir. Align islemi etki etmez ama a etiektini div icerisine
+                            alip div etiketine align right ozelligi verirsek a etiketi icerisindeki icerik en saga
+                            kaymis olur. Cunku div etiketi block ozellik gosterir.</li>
+                        <li>Eger paragarafi sutunlara bolmek istersek o elemente column-count ozelligini kac sutuna
+                            boleceksek o kadar deger atariz. ex: column-count : 2 (2 sutuna boler)</li>
+                        <li>Sutunlara boldugumuz elementin sutunlar arasina cizgi eklemek istersek column-rule
+                            ozelligine ayni border eklermis gibi ozellikler gireriz. ex: column-rule : 1px solid gray;
+                        </li>
+                        <li>column-count ozelligi CSS 3 ile gelen bir ozellik. Her tarayicida calistigina emin olmak
+                            icin 3 kod da eklenir; <br>
+                            column-count : 2; <br>
+                            -webkit-column-count : 2; (opera,chrome ve safari icin) <br>
+                            -moz-column-count : 2; (mozilla icin) <br>
+                            Ayni sekilde column-rule icin de hepsi tek tek yazilir.</li>
+
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h2>Others</h2>
+            <ul>
+                <li><b>Box Shadow</b>
+                    <ul>
+                        <li>Belirli bir nesnenin arkasina golge efektini vermeye yarar.</li>
+                        <li>column-count da yaptigimiz gibi webkit ve moz etiketlerini kullanmamiz tarayicilar icin
+                            yararli olur.</li>
+                        <li>box-shadow ozelliginin 4 adet parametresi vardir:
+                            <ol>
+                                <li>Ilk parametresi golgenin yatayda kac px kaydirilacagini belirler.</li>
+                                <li>Ikinci parametresi golgenin dikeyde kac px kaydirilacagini belirler.</li>
+                                <li>Ucuncu parametre golgenin ne kadar blur efektine sahip olacagini belirler.</li>
+                                <li>Dorduncu parametre ise efektin etrafa ne kadar dagitilacagini belirler.</li>
+                                <li>Ayrica parametrelerden bagimsiz direkt oalrak renk belirtebiliriz.</li>
+                            </ol>
+                        </li>
+                        <li>Her parametrenin doldurulmasi zorunlu degildir.</li>
+                        <li>box-shadow ozelligini belirtirken bir virgulle ayirip ust uste iki adet shadow
+                            kullanabiliriz. Bu da golgenin belirginligini arttirir.</li>
+                    </ul>
+                </li>
+
+                <li><b>Transitions</b>
+                    <ul>
+                        <li>Transitions, gecis efektleridir. Bir ozelligin baska bir ozellige, belli bir surede gecis
+                            yapmasini saglar. Gorsellige yumusaklik katar.</li>
+                        <li>Kullanimi :
+                            <ul>
+                                <li>transition : (degistirilecekozellik) (kacsaniyedeolacagi)s (gerceklestirilme
+                                    sekli.opsiyonel. ease,linear..)</li>
+                                <li>Hangi element degistirilecekse transition degeri onun css koduna yazilir. Virgul ile
+                                    ayrilip birden cok ozellik eklenebilir.</li>
+                                <li>Sonra bu elemani tetiklemek icin ayrica bir css kodu daha yazilmasi gerekir. hover
+                                    gibi</li>
+                                <li>Tarayici ozellikleri bunun icin de gecerlidir.(webkit vb)</li>
+                                <li>ease,linear,ease-in,ease-out,ease-in-out ozellikleri transition-timing-function
+                                    olarak da eklenebilir.</li>
+                                <li>transition-delay de hareketin delayli bir sekilde yapilmasini saglar.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="http://twitter.com/eabalta" target="_blank" id="trans">Example</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h2>Bu konudan sonra kursta bircok uygulama yapildi. Tek tek not almak zor olacagi icin;</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/q1Rr6KyhWSw" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            <hr>
+
+            <h2>Responsive Design</h2>
+            <ul>
+                <li>
+                    Responsive Tasarim, mobil cihazlar gibi farkli cozunurluklere sahip olan ekranlarda da sahip
+                    oldugumuz temanin duzgun gozukmesini saglamaktir.
+                </li>
+                <li>
+                    Bazi siteler mobile subdomaini ile mobile ozgu ikinci bir tema gerektirirken responsive tasarimda
+                    boyle bir seye gerek yoktur.
+                </li>
+                <li>
+                    Responsive tasarim ana noktalarindan birisi siteye baglanan cihazin ekran cozunurlugune gore
+                    ayarlanmasidir. Karsidaki cihazin ekran cozunurlugunu ise media query arayiciligiyla ogreniyoruz.
+                </li>
+                <li>@media screen and (max-width 600px) { <br>
+                    h1{ font-size: 12px;} <br>
+                    } <br>
+                    <b>Maksimum ekran genisligi 600 ve daha asagisi olan bir cihaz siteye baglanirsa bu kod devreye
+                        girer ve h1 etiketi 12px olur.</b> </li>
+                <li>
+                    max-width gibi parametreler icin verilen her bir css koduna breakpoint deniliyor.
+                </li>
+            </ul>
+
+            <hr>
+
+            <h2>SASS & SCSS</h2>
+            <ul>
+                <li>Bunlar CSS yazmayi kolaylastiran ara diller denilebilir.</li>
+                <li>SASS olarak yazilan kodlar SASS Compiler(Transpiler da denilebilir) ile CSS koduna cevrilip daha
+                    sonrasinda browser tarafindan
+                    taninirlar.</li>
+                <li>SASS ve SCSS arasinda ufak farkliliklar vardir fakat java mantigina daha benzer olan SCSS kullanimi
+                    daha kolaydir.</li>
+                <li>
+                    <h4>Variables</h4>
+                    <ul>
+                        <li>SCSS kullanirken sabit degiskenler olusturabiliriz, mesela renk kodlari gibi. <br>
+                            ex: <b>$color-primary: #ffffff;</b> <br>
+                            kullanim: <b>background-color: $color-primary;</b></li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Nesting</h4>
+                    <ul>
+                        <li>
+                            Normal CSS kodunda etkilenecek her element icin ayri bir CSS kodu yazilir. Fakat SCSS
+                            kullanirken super class niteligindeki parent elementinin etiketi acilmissa child etiketleri
+                            icerisinde niteleyebilirsin.
+                        </li>
+                        <li><b>body{ <br>
+                                font-size: 2px; <br>
+                                p{ <br>
+                                color:$color-primary; <br>
+                                } <br>
+                                }</b> <br>
+                            Burada body icerisindeki p etiketleri degistirilir. body nitelenip daha sonrasinda body p
+                            olarak nitelemeye gerek kalmaz.</li>
+                        <br>
+                        <li>Nesting ise eger alt elemenlere degil de kendi ozelliklerine erismek istenirse <b>this</b>
+                            ozelligini kullanmak gibi <b>&</b>(ampersand) isareti kullanilir.</li>
+                        <li><b>body{ <br>
+                                font-size: 2px; <br>
+                                &:hover{ <br>
+                                color:$color-primary; <br>
+                                } <br>
+                                }</b> <br>
+                            Burada bodye hover olayi gerceklestiginde renk, color-primary icerisine atanmis renge
+                            cevrilir. Kisacasi & isareti, this gorevi gorur.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Mixin & Extend</h4>
+                    <ul>
+                        <li>Mixin ve Extend temelinde benzer ozellikler fakat buyuk farkliliklar bulundurmaktadirlar.
+                        </li>
+                        <li>Kisa ornek vermek gerekirse Mixin fonksiyon gibi parametre alabilir ve bu parametrelere gore
+                            ozellikler degisebilir. Extend ise verilen etikete direkt icerisindeki tum ozellikleri verir
+                            fakat bu ozellikler degistirilemezler.</li>
+                        <li>Degistirilebilecek ortak olan ozellikleri Mixin ile belirlemek ve degistirilmeyecek ortak
+                            kodlari ise Extend ile etikete vererek kod tekrarindan kacinmis oluruz.</li>
+                        <li>box ornegini verecek olursak; <br>
+                            <b>@mixin box($color){ <br>
+                                width:100px; <br>
+                                height: 100px; <br>
+                                color: $color; <br>
+                                } <br>
+                                #first-box{ <br>
+                                @include box(#333); <br>
+                                }</b> <br>
+                            Sekildeki gibi bir ornekte, mixin ile icerisindeki sabit ve degisken degerler olusturuluyor.
+                            Degisken olarak color, sabit olarak da width ve height degerleri veriliyor. Asagida @include
+                            etiketiyle box mixini etikete dahil edilip parametre olarak degisken olan ozellikler
+                            yollaniyor.</li>
+                        <li>box ornegini verecek olursak; <br>
+                            <b>.box { <br>
+                                width:100px; <br>
+                                height: 100px; <br>
+                                color: #333; <br>
+                                } <br>
+                                #first-box{ <br>
+                                @extend .box; <br>
+                                }</b> <br>
+                            Bu ornekte box icerisindeki tum ozellikler first-box idsine aktarilir ve degistirilemez.
+                            Ortak ve sabit degerlerde kod tekrarindan kurtulmak icin guzel bir yontem.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h2>Flexbox</h2>
+            <ul>
+                <li>Flexbox; display,float gibi yerlestirme ozelliklerinde yasanan sikintilardan arindirilmis esnek bir
+                    display ozelligidir.
+                    <img src="img/flexbox.PNG" alt=""></li>
+                <li>Flexbox ozelligi iki kisimdan olusur. Flex container ve flex item. Flex container, itemleri icinde
+                    barindiran yapidir. Flex item ise container icerisindeki her bir elemandir.
+                    <img src="img/flexbox2.PNG" alt=""></li>
+                <li>Flex container ve flex item'in farkli degiskenleri vardir. <b>Sol tarafta flex container
+                        ozellikleri</b>, <b>sag tarafta ise flex item ozellikleri bulunmaktadir.</b>
+                    <img src="img/flexbox3.PNG" alt=""></li>
+                <li>
+                    <h4>Flex Container</h4>
+                    <ul>
+                        <li>display ozelligine flex degeri atanmasi gerekir.</li>
+                        <li>
+                            Icerisindeki bulunan elemanler block ozelligini kaybedip inline-block gibi davranirlar.
+                        </li>
+                        <li>
+                            Icerisindeki elemanlari istedigimiz gibi hareket ettirebiliriz. Bunun icin bircok degisken
+                            var.
+                        </li>
+                        <li>
+                            <b>flex-direction</b> : itemlerin nasil dizilecegini belirler.
+                            row(stardart),row-reverse,column,column-reverse <br>
+                            flex-wrap : sigmayan itemlerin asagiya kaydirilmasi. nowrap(stardart),wrap,wrap-reverse
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Flexbox Ailgnments</h4>
+                    <ul>
+                        <li>Hizalama islemleri</li>
+                        <li>justify-content: elemanlari yatayda hizalamaya yarar. <ul>
+                                <li>center</li>
+                                <li>flex-start : sola dogru</li>
+                                <li>flex-end : saga dogru</li>
+                                <li>space-between : her elemanin arasinda esit bosluk olur,en bastaki ve en sondaki
+                                    bosluklar ayarlanmaz. sadece elemanlarin arasindaki bosluklar ayarlanir</li>
+                                <li>space-around : space-between ile benzerdir fakat en bastaki ve en sondaki bosluklari
+                                    da ayarlar. en basta ve en sonda x bosluk varsa elemanlar arasi 2x bosluk olur
+                                    <img src="img/flexalign.PNG" alt=""></li>
+                                <li>space-evenly : en bastaki ve en sondaki bosluklar dahil butun bosluklar esit olarak
+                                    ayarlanir.</li>
+                            </ul>
+                        </li>
+                        <li>align-items: elemanlari dikeyde hizalamaya yarar.
+                            <ul>
+                                <li>stretch (standart): yukseklikler belirtilmemisse butun itemlar ayni yukseklikte
+                                    olur. birine
+                                    verilen yukseklik hepsini etkiler.</li>
+                                <li>center : merkeze sabitler</li>
+                                <li>flex-start : en uste hizalanir</li>
+                                <li>flex-end : en alta hizalanir</li>
+                                <li>baseline : iceriklerin alt sinirindan hizalama yapilir. ornekte icerik olarak
+                                    yazilan yazilarin tam altintan hizalama yapilmis. <br> <img
+                                        src="img/flexalign2.PNG"></li>
+                            </ul>
+                        </li>
+                        <li><b>flex-direction : row</b> icin justify-content yatayda hizalama yapar. align-items dikeyde
+                            hizalama yapar.
+                            <img src="img/flexdirection.PNG">
+                        </li>
+                        <li><b>flex-direction : column</b> icin justify-content dikeyde hizalama
+                            yapar. align-items yatayda
+                            hizalama yapar.
+                            <img src="img/flexdirection2.PNG">
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Flex Items</h4>
+                    <ul>
+                        <li>Flex container icerisindeki elemanlarin, eleman seviyesinde siralama ve hizalama islemleri
+                            burada yapilir.</li>
+                        <li>Flex ozelligi olan container icerisindeki itemlarin classlarina verilebilecek ozellikler:
+                            <ul>
+                                <li>align-self : itemin kendi konumu container icerisinde ayarlanabilir. </li>
+                                <li>order : elemanin container icerisindeki sirasini belirtir. o siraya gore itemlar
+                                    dizilir. negatiften pozitife dogru bir oncelik vardir. containeri yukarida verilmis
+                                    xy grafigi gibi dusun. negatif olan en solda olur.</li>
+                                <li>flex-grow : elemanin sayfada kapladigi alan ile alakalidir. tum elemanlara 1 atanmis
+                                    olsaydi 2 atanan eleman digerlerinden 2 kat daha fazla yer kaplayacakti. Eger sadece
+                                    bir tanesine herhangi bir deger atanmis olsaydi deger atanan eleman diger
+                                    elemanlardan kalan tum alani kaplardi. <br>
+                                    Ornekte item3 ve item4 flex-grow 1, item2 4, item1 ise 2 degerine sahiptir.<img
+                                        src="img/flexgrow.PNG"></li>
+                                <li>flex-basis : yuzde ya da px deger verilebilir. itema verilen deger kadar containerda
+                                    yer kaplar.</li>
+                                <li>flex-shrink : grow buyumekle alakali fakat shrink daralmakla alakali. varsayilan
+                                    degeri 1'dir. kendine ayrilan yer kalmadiysa otomatik olarak kuculmeye gider. Eger
+                                    bu degeri 0 yaparsak alan kalmasa bile kuculmez scroll bar cikar.</li>
+
+                                <li>Son uc ozelligi tek tek atamak yerine tek bir seferde atama yapilabiliyor. <br>
+                                    <b>flex: (grow) (shrink) (basis)</b> seklinde bir kullanim yapilabilir. Eger flex: x
+                                    seklinde bir kullanim yapilirsa sadece grow icin kullanilir.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Row Alignment</h4>
+                    <ul>
+                        <li>Container icerisinde birden fazla satir varsa bunlarin hizalanmasini <b>align-content</b>
+                            ile yapariz.</li>
+                        <li>Alabilecegi degerler justify-content ile aynidir.</li>
+                    </ul>
+                </li>
+                <li>
+                    <h4>Flex & Margin</h4>
+                    <ul>
+                        <li>Flex container icerisinde margin kullanimi gayet esnek bir yapidadir.</li>
+                        <li>Eger margin : auto ozelligi verilirse verilen item containerin tam ortasina yerlesir</li>
+                        <li>Eger margin-left : auto ozelligi verilirse verilen item containerin sagina yapisir</li>
+                        <li>Eger margin-right : auto ozelligi verilirse verilen item containerin soluna yapisir</li>
+                        <li>Eger margin-top : auto ozelligi verilirse verilen item containerin altina yapisir</li>
+                        <li>Eger margin-bottom : auto ozelligi verilirse verilen item containerin ustune yapisir</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+
+</body>
+
+</html>

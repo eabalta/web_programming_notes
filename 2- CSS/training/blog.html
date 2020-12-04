@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b7822afb55.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f1f1f1;
+        }
+
+
+        .container {
+            width: 1140px;
+            margin: 0px auto;
+        }
+
+        #blog-posts-container {
+            width: 75%;
+            float: left;
+        }
+
+        #others {
+            width: 25%;
+            float: left;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 1px 2px 4px rgba(51, 51, 51, .6);
+            transition: box-shadow 1s;
+
+        }
+
+        .post {
+            position: relative;
+            background-color: #ffffff;
+            padding: 25px;
+            margin: 0 15px 15px 0;
+            box-shadow: 1px 2px 4px rgba(51, 51, 51, .6);
+            border-radius: 8px;
+            transition: box-shadow 1s;
+        }
+
+        #others:hover {
+            box-shadow: 2px 4px 8px rgba(51, 51, 51, .6);
+
+        }
+
+        .post:hover {
+            box-shadow: 2px 4px 8px rgba(51, 51, 51, .6);
+
+        }
+
+        .date {
+            position: absolute;
+            right: 40px;
+            top: 15px;
+        }
+
+        .text {
+            text-align: justify;
+        }
+
+        #author img {
+            border-radius: 8px;
+        }
+
+        img {
+            width: 100px;
+        }
+
+        .mt20 {
+            margin-top: 20px;
+        }
+
+        #nav {
+            background-color: #333;
+        }
+
+        #nav ul {
+            list-style-type: none;
+            overflow: hidden;
+        }
+
+        #nav li {
+            float: left;
+        }
+
+        #nav li a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+    </style>
+    <title>Blog</title>
+</head>
+
+<body>
+
+    <div id="nav">
+        <div class="container">
+            <ul>
+                <li><a href=""><i class="fas fa-home"></i></a></li>
+                <li><a href="">Article</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Account</a></li>
+            </ul>
+
+
+        </div>
+
+    </div>
+
+    <div class="container mt20">
+
+        <div id="blog-posts-container">
+
+            <div class="post">
+                <h2 class="title">My First Blog Post</h2>
+                <p class="date">16.08.2020</p>
+                <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat provident esse
+                    laborum nulla aut deleniti. Culpa obcaecati reprehenderit earum aspernatur sapiente minus
+                    necessitatibus dignissimos ea quibusdam esse. Quas, praesentium sed.</p>
+                <br>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ad deserunt corporis
+                    laudantium temporibus dolor voluptatem, minima hic porro dolores eum modi autem reprehenderit
+                    maxime, est unde nam voluptates! Praesentium.</p>
+            </div>
+
+            <div class="post">
+                <h2 class="title">My First Blog Post</h2>
+                <p class="date">16.08.2020</p>
+                <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat provident
+                    esse
+                    laborum nulla aut deleniti. Culpa obcaecati reprehenderit earum aspernatur sapiente
+                    minus
+                    necessitatibus dignissimos ea quibusdam esse. Quas, praesentium sed.</p>
+                <br>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ad deserunt
+                    corporis
+                    laudantium temporibus dolor voluptatem, minima hic porro dolores eum modi autem
+                    reprehenderit
+                    maxime, est unde nam voluptates! Praesentium.</p>
+            </div>
+
+            <div class="post">
+                <h2 class="title">My First Blog Post</h2>
+                <p class="date">16.08.2020</p>
+                <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat provident
+                    esse
+                    laborum nulla aut deleniti. Culpa obcaecati reprehenderit earum aspernatur sapiente
+                    minus
+                    necessitatibus dignissimos ea quibusdam esse. Quas, praesentium sed.</p>
+                <br>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ad deserunt
+                    corporis
+                    laudantium temporibus dolor voluptatem, minima hic porro dolores eum modi autem
+                    reprehenderit
+                    maxime, est unde nam voluptates! Praesentium.</p>
+            </div>
+
+            <div class="post">
+                <h2 class="title">My First Blog Post</h2>
+                <p class="date">16.08.2020</p>
+                <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat provident
+                    esse
+                    laborum nulla aut deleniti. Culpa obcaecati reprehenderit earum aspernatur sapiente
+                    minus
+                    necessitatibus dignissimos ea quibusdam esse. Quas, praesentium sed.</p>
+                <br>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ad deserunt
+                    corporis
+                    laudantium temporibus dolor voluptatem, minima hic porro dolores eum modi autem
+                    reprehenderit
+                    maxime, est unde nam voluptates! Praesentium.</p>
+            </div>
+
+        </div>
+
+
+        <div id="othercon">
+            <div id="others">
+                <ul>
+                    <li class="category">Lorem.</li>
+                    <li class="category">Aut!</li>
+                    <li class="category">Optio?</li>
+                    <li class="category">Quia.</li>
+                    <li class="category">Necessitatibus?</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="clear: both;"></div>
+
+
+        <div id="author">
+            <img src="../../html/img/1.jpg" id="author-img">
+            <p class="author-name">Deli Balta</p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

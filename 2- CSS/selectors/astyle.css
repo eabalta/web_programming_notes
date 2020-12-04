@@ -1,0 +1,58 @@
+
+/* eger bir esitlik verilmezse o attr. sahip tum etiketler secilir.*/
+/* title attribute'una (degeri fark etmeksizin) sahip olan tum p etiketlerini secer*/
+p[title]{
+	border: 1px solid gray;
+	padding: 5px;	
+}
+
+/* title attr.'u "third paragrapgh" olan p etiketlerini secer*/
+p[title="third paragraph"]{
+	background-color: gold;
+}
+
+/* title attr.'u icerisinde "forth" degeri barindiran tum p etiketlerini secer. bu islem esittir onune tilde isareti konarak saglanir*/
+p[title~="forth"]{
+	background-color: red;
+}
+
+
+/* esittir oncesinde ^ isareti kullanilirsa, koseli parantez icerisinde verilen ozellige atanan deger, 
+a etiketlerindeki ozelligin en basinda bulunuyorsa o a etiketleri secilir.*/
+
+/* a etiketleri icerisinde href attr. icerisinde hangileri https ile basliyosa onlari secer */
+a[href^="https"]{
+	color:red;
+}
+
+
+/* esittir oncesinde $ isareti kullanilirsa, koseli parantez icerisinde verilen ozellige atanan deger, 
+a etiketlerindeki ozelligin en sonunda bulunuyorsa o a etiketleri secilir.*/
+
+/* a etiketleri icerisinde href attr. icerisinde hangileri com ile bitiyorsa onlari secer */
+a[href$="com"]{
+	color: aqua;
+}
+
+
+/* birden fazla attribute da secilebilir. yanyana koseli parantezler eklenerek birden fazla ozellikler ekleyip secimi kisitlandirabiliriz. */
+/* burada yapilan islem a etiketlerinden href ozelligi bulunan, o ozelligin icerisinde asagida verilen adres olan VE target ozelligi bulunan,
+ o ozelligin icerisinde de asagidaki verilen _blank degeri olan etiketler secilir.  */
+
+a[href="https://www.example.net"][target="_blank"]{
+	color: yellow;
+}
+
+/* Attribute selectorlar form elemanlari icin de kullanilabilir. */
+/* burada input formlarindan type ozelligi text olan etiketler secilir*/
+input[type="text"]{
+	display: block;
+	width: 150px;
+	background-color: red;
+}
+/* burada input formlarindan type ozelligi button olan etiketler secilir*/
+input[type="button"]{
+	background: #4CAF50;
+	color: #FFFFFF;
+	padding: 8px 16px;
+}
